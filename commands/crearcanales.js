@@ -160,11 +160,11 @@ module.exports = {
                                 permissionOverwrites: [
                                     {
                                       id: message.guild.roles.everyone, //To make it be seen by a certain role, user an ID instead
-                                      deny: ['CONNECT'] //Deny permissions
+                                      deny: [PermissionsBitField.Flags.Connect]
                                     },
                                     {
                                         id: buenosRoles[i][0], //To make it be seen by a certain role, user an ID instead
-                                        allow: ['CONNECT'] //Allow permissions
+                                        allow: [PermissionsBitField.Flags.Connect]
                                     }
                                 ],
                             });
