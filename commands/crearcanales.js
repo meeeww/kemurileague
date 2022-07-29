@@ -72,35 +72,35 @@ module.exports = {
                     message.guild.channels.create({
                         name: "💬┃general",
                         type: ChannelType.GuildText,
-                        parent: categorias[i],
+                        parent: categorias[i][0],
                     });
                 }
                 for(var i = 0; i < categorias.length; i++){
                     message.guild.channels.create({
                         name: "🔗┃formularios",
                         type: ChannelType.GuildText,
-                        parent: categorias[i],
+                        parent: categorias[i][0],
                     });
                 }
                 for(var i = 0; i < categorias.length; i++){
                     message.guild.channels.create({
                         name: "💬┃grupo1",
                         type: ChannelType.GuildText,
-                        parent: categorias[i],
+                        parent: categorias[i][0],
                     });
                 }
                 for(var i = 0; i < categorias.length; i++){
                     message.guild.channels.create({
                         name: "💬┃grupo2",
                         type: ChannelType.GuildText,
-                        parent: categorias[i],
+                        parent: categorias[i][0],
                     });
                 }
                 for(var i = 0; i < categorias.length; i++){
                     message.guild.channels.create({
                         name: "💬┃General",
                         type: ChannelType.GuildVoice,
-                        parent: categorias[i],
+                        parent: categorias[i][0],
                     });
                 }
             }, 6000);
