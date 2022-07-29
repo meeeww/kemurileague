@@ -149,6 +149,29 @@ module.exports = {
                 //}
                 //console.log(buenasCategorias)
             }, 8000);
+            setTimeout(function(){//me falta cambiar permisos, ya se reciben los roles e ID creados de los equipos c:
+                for(var i = 0; i < buenosRoles.length; i++){
+                    for(var j = 0; j < categorias.length; j++){
+                        if(categorias[j][1] == buenosRoles[i][2]){
+                            message.guild.channels.create({
+                                name: buenosRoles[i][1],
+                                type: ChannelType.GuildVoice,
+                                parent: categorias[j][0],
+                                permissionOverwrites: [
+                                    {
+                                      id: message.guild.roles.everyone, //To make it be seen by a certain role, user an ID instead
+                                      deny: ['CONNECT'] //Deny permissions
+                                    },
+                                    {
+                                        id: buenosRoles[i][0], //To make it be seen by a certain role, user an ID instead
+                                        allow: ['CONNECT'] //Allow permissions
+                                    }
+                                ],
+                            });
+                        }
+                    }
+                }
+            }, 9000);
             
             //if(message.member.roles.cache.find(r => r.id === "Champion Selector") - conseguir roles de equipos
 
