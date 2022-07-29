@@ -66,6 +66,44 @@ module.exports = {
                 console.log(categorias)
                 //crearaqui
             },5000);
+            //crearcion de canales
+            setTimeout(function(){
+                for(var i = 0; i < categorias.length; i++){
+                    message.guild.channels.create({
+                        name: "💬┃general",
+                        type: ChannelType.GuildText,
+                        parent: categorias[i],
+                    });
+                }
+                for(var i = 0; i < categorias.length; i++){
+                    message.guild.channels.create({
+                        name: "🔗┃formularios",
+                        type: ChannelType.GuildText,
+                        parent: categorias[i],
+                    });
+                }
+                for(var i = 0; i < categorias.length; i++){
+                    message.guild.channels.create({
+                        name: "💬┃grupo1",
+                        type: ChannelType.GuildText,
+                        parent: categorias[i],
+                    });
+                }
+                for(var i = 0; i < categorias.length; i++){
+                    message.guild.channels.create({
+                        name: "💬┃grupo2",
+                        type: ChannelType.GuildText,
+                        parent: categorias[i],
+                    });
+                }
+                for(var i = 0; i < categorias.length; i++){
+                    message.guild.channels.create({
+                        name: "💬┃General",
+                        type: ChannelType.GuildVoice,
+                        parent: categorias[i],
+                    });
+                }
+            }, 6000);
             var roleId = []
             var buenosRoles = []
             setTimeout(function(){
@@ -85,7 +123,7 @@ module.exports = {
                 //console.log(roleId[0][1])//segunda (1) = derecha name | (0) = izquierda id
                 //console.log(roleId.length)
                 console.log(buenosRoles)
-            }, 6000);
+            }, 7000);
             
             var buenasCategorias = []
             setTimeout(function(){//me falta cambiar permisos, ya se reciben los roles e ID creados de los equipos c:
@@ -110,7 +148,7 @@ module.exports = {
                     })
                 //}
                 //console.log(buenasCategorias)
-            }, 7000);
+            }, 8000);
             
             //if(message.member.roles.cache.find(r => r.id === "Champion Selector") - conseguir roles de equipos
 
