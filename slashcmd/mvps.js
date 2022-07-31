@@ -8,7 +8,7 @@ const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mpvs")
+    .setName("mvps")
     .setDescription("Tabla de MVPs"),
 
     async run(client, interaction, dataGotten){
