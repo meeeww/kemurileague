@@ -23,7 +23,7 @@ module.exports = {
         const googleSheets = google.sheets({version: "v4", auth: client});
     
         ///////arreglarxd const { spreadsheetId } = require("../hojaspartidos/"+interaction.options.getString("division")+".json")
-        const { spreadsheetId } = require("../hojaspartidos/"+pu+".json")
+        const { spreadsheetId } = require("../hojaspartidos/pu.json")
         //metadata
         const metaData = await googleSheets.spreadsheets.get({
             auth,
