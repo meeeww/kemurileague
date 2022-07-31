@@ -125,7 +125,7 @@ module.exports = {
         const collector = m.createMessageComponentCollector({ filter: ifilter, time: 60000})
 
         collector.on("collect", async i => {
-            if(i.customId === "cambiar"){
+            if(i.customId === "mvpposicion"){
                 await i.deferUpdate()
                 i.editReply({content: "hola!", components: [row], ephemeral: true})
             }
