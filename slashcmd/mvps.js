@@ -90,25 +90,25 @@ module.exports = {
         const mvpjornada = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
         .setTitle("Tabla general por Jornada")
-        .setDescription("")
+        .setDescription("LMAO")
         .setFooter({text: "Kemuri League"})
 
         const mvpposicion = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
         .setTitle("Top 5 jugadores  con más MVPs de la KL")
-        .setDescription("")
+        .setDescription("LMAO")
         .setFooter({text: "Kemuri League"})
 
         const mvpgeneral = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
         .setTitle("Top 5 jugadores con más MVPs de la KL por rol")
-        .setDescription("")
+        .setDescription("LMAO")
         .setFooter({text: "Kemuri League"})
 
         const mvpgeneralposicion = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
         .setTitle("MVPs de Kemuri League")
-        .setDescription("")
+        .setDescription("LMAO")
         .setFooter({text: "Kemuri League"})
         //
         const embedsConfirm = [embed, mvpjornada, mvpposicion, mvpgeneral, mvpgeneralposicion]
