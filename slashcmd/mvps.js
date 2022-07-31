@@ -53,28 +53,28 @@ module.exports = {
         const row = new Discord.ActionRowBuilder()
         .addComponents(
           [
-            new Discord.MessageButton()
+            new Discord.ButtonBuilder()
             .setCustomId("mvpjornada")
             .setLabel("MVP de la Jornada")
             .setStyle("PRIMARY")
             .setEmoji("😤")
           ],
           [
-            new Discord.MessageButton()
+            new Discord.ButtonBuilder()
             .setCustomId("mvpposicion")
             .setLabel("MVP de Posición por Jornadas")
             .setStyle("PRIMARY")
             .setEmoji("😤")
           ],
           [
-            new Discord.MessageButton()
+            new Discord.ButtonBuilder()
             .setCustomId("mvpkl")
             .setLabel("MVP de la KL")
             .setStyle("PRIMARY")
             .setEmoji("😤")
           ],
           [
-            new Discord.MessageButton()
+            new Discord.ButtonBuilder()
             .setCustomId("mvpklroles")
             .setLabel("MVP de la KL por roles")
             .setStyle("PRIMARY")
