@@ -56,28 +56,28 @@ module.exports = {
             new Discord.ButtonBuilder()
             .setCustomId("mvpjornada")
             .setLabel("MVP de la Jornada")
-            .setStyle("PRIMARY")
+            .setStyle("Primary")
             .setEmoji("😤")
           ],
           [
             new Discord.ButtonBuilder()
             .setCustomId("mvpposicion")
             .setLabel("MVP de Posición por Jornadas")
-            .setStyle("PRIMARY")
+            .setStyle("Primary")
             .setEmoji("😤")
           ],
           [
             new Discord.ButtonBuilder()
             .setCustomId("mvpkl")
             .setLabel("MVP de la KL")
-            .setStyle("PRIMARY")
+            .setStyle("Primary")
             .setEmoji("😤")
           ],
           [
             new Discord.ButtonBuilder()
             .setCustomId("mvpklroles")
             .setLabel("MVP de la KL por roles")
-            .setStyle("PRIMARY")
+            .setStyle("Primary")
             .setEmoji("😤")
           ]
 
