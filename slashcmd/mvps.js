@@ -22,7 +22,8 @@ module.exports = {
         //Crear google sheets api
         const googleSheets = google.sheets({version: "v4", auth: client});
     
-        const { spreadsheetId } = require("../hojaspartidos/"+interaction.options.getString("division")+".json")
+        ///////arreglarxd const { spreadsheetId } = require("../hojaspartidos/"+interaction.options.getString("division")+".json")
+        const { spreadsheetId } = require("../hojaspartidos/"+pu+".json")
         //metadata
         const metaData = await googleSheets.spreadsheets.get({
             auth,
