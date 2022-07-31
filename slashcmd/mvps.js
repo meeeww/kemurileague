@@ -50,7 +50,7 @@ module.exports = {
         var adc = dataGotten2["values"][parseInt(jornada + 3)[23]]
         var supp = dataGotten2["values"][parseInt(jornada + 3)[24]]
         //console.log(parseInt(jornada) + parseInt(sumar1))
-        const row = new Discord.MessageActionRow()
+        const row = new Discord.ActionRowBuilder()
         .addComponents(
           [
             new Discord.MessageButton()
