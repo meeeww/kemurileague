@@ -57,7 +57,12 @@ module.exports = {
         for(var i = 0; i < listaJugadores.length; i++){
             // Last i elements are already in place
             console.log(listaJugadores[i][1] + "- " + interaction.options.getString("player"))
-            if(listaJugadores[i][1] == interaction.options.getString("player")){
+            var jugador1 = listaJugadores[i][1]
+            var jugador2 = interaction.options.getString("player")
+            console.log(typeof jugador1)
+            console.log(typeof jugador2)
+            if(jugador1 == jugador2){
+                
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("Top 5 MVPs de "+interaction.options.getString("posicion"))
@@ -70,7 +75,7 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-            }else if(listaJugadores[i][1] == interaction.options.getString("player")){
+            }else if(jugador1 != jugador2){
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
