@@ -44,7 +44,7 @@ module.exports = {
             range: "Jugadores",
         })
         dataGotten2 = getRows.data
-        var listaJugadores = {}
+        var listaJugadores = []
         for(var i = 0; i < dataGotten2["values"][0][11]; i++){
             if(dataGotten2["values"][i + 1][7] == interaction.options.getString("posicion")){
                 listaJugadores.push([dataGotten2["values"][i + 1][11], dataGotten2["values"][i + 1][0]])
