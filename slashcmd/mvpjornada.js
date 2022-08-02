@@ -59,10 +59,15 @@ module.exports = {
         var jornada = interaction.options.getString("jornada")
         
         var toplane = dataGotten2["values"][(parseInt(jornada)) + 2][20]
-        var jungle = dataGotten2["values"][(parseInt(jornada)) + 2][21]
-        var mid = dataGotten2["values"][(parseInt(jornada)) + 2][22]
-        var adc = dataGotten2["values"][(parseInt(jornada)) + 2][23]
-        var supp = dataGotten2["values"][(parseInt(jornada)) + 2][24]
+        var jungle = dataGotten2["values"][(parseInt(jornada)) + 2][22]
+        var mid = dataGotten2["values"][(parseInt(jornada)) + 2][24]
+        var adc = dataGotten2["values"][(parseInt(jornada)) + 2][26]
+        var supp = dataGotten2["values"][(parseInt(jornada)) + 2][28]
+        var toplaneequipo = dataGotten2["values"][(parseInt(jornada)) + 2][21]
+        var jungleequipo = dataGotten2["values"][(parseInt(jornada)) + 2][23]
+        var midequipo = dataGotten2["values"][(parseInt(jornada)) + 2][25]
+        var adcequipo = dataGotten2["values"][(parseInt(jornada)) + 2][27]
+        var suppequipo = dataGotten2["values"][(parseInt(jornada)) + 2][29]
         //console.log(parseInt(jornada) + parseInt(sumar1))
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
@@ -71,28 +76,28 @@ module.exports = {
         .addFields(
             {
                 "name": "🤺 Toplane 🤺",
-                "value": "**"+toplane+"** - EQUIPO",
+                "value": "**"+toplane+"** - "+ toplaneequipo,
                 inline: true
               },
               {
                 "name": "🌳 Jungla 🌳",
-                "value": "**"+jungle+"** - EQUIPO",
-                //inline: true
+                "value": "**"+jungle+"** - "+ jungleequipo,
+                inline: true
               },
               {
                 "name": "🧙‍♂️ Mid 🧙‍♂️",
-                "value": "**"+mid+"** - EQUIPO",
-                //inline: true
+                "value": "**"+mid+"** - "+ midequipo,
+                inline: true
               },
               {
                 "name": "🏹 ADC 🏹",
-                "value": "**"+adc+"** - EQUIPO",
-                //inline: true
+                "value": "**"+adc+"** - "+ adcequipo,
+                inline: true
               },
               {
                 "name": "🛡️ Support 🛡️",
-                "value": "**"+supp+"** - EQUIPO",
-                //inline: true
+                "value": "**"+supp+"** - "+ suppequipo,
+                inline: true
               }
             )
             .setFooter({text: "Kemuri League"})

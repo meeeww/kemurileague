@@ -5,12 +5,19 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
-const { pagination } = require("reconlx")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mvpposicion")
-    .setDescription("Tabla de MVPs por Posición"),
+    .setName("mvpsjornada")
+    .setDescription("Tabla de MVPs por Jornadas")
+    .addStringOption(option => option.setName("posicion").setDescription("Rol: ").setRequired(true).addChoices(
+        { name: 'Toplaners', value: "Toplaners"},
+        { name: 'Junglas', value: "Junglas"},
+        { name: 'Midlaners', value: "Midlaners"},
+        { name: 'ADCs', value: "ADCs"},
+        { name: 'Supports', value: "Supports"},
+    )),
+    
 
     async run(client, interaction, dataGotten){
         
@@ -23,8 +30,7 @@ module.exports = {
         //Crear google sheets api
         const googleSheets = google.sheets({version: "v4", auth: client});
     
-        ///////arreglarxd const { spreadsheetId } = require("../hojaspartidos/"+interaction.options.getString("division")+".json")
-        const { spreadsheetId } = require("../hojaspartidos/pu.json")
+        const { spreadsheetId } = require("1pk8Bp4f6Jni27RipbB-UNBSTuAW4gNKD4DD3rvxrf9E")
         //metadata
         const metaData = await googleSheets.spreadsheets.get({
             auth,
@@ -38,98 +44,68 @@ module.exports = {
             range: "Calendario",
         })
         dataGotten2 = getRows.data
-        var jornada = dataGotten2["values"][1][13]
-        var sumar1 = dataGotten2["values"][1][14]
-        var sumar2 = dataGotten2["values"][1][15]
-        var sumar3 = dataGotten2["values"][1][16]
-        var sumar4 = dataGotten2["values"][1][17]
-        var sumar5 = dataGotten2["values"][1][18]
-
-        var toplane = dataGotten2["values"][parseInt(jornada + 3)[20]]
-        var jungle = dataGotten2["values"][parseInt(jornada + 3)[21]]
-        var mid = dataGotten2["values"][parseInt(jornada + 3)[22]]
-        var adc = dataGotten2["values"][parseInt(jornada + 3)[23]]
-        var supp = dataGotten2["values"][parseInt(jornada + 3)[24]]
+        var listaJugadores = {}
+        for(var i = 0; i < dataGotten2["values"][0][11]; i++){
+            if(dataGotten2["values"][i + 1][7] == interaction.options.getString("posicion")){
+                listaJugadores.push([dataGotten2["values"][i + 1][11], dataGotten2["values"][i + 1][0]])
+            }
+        }
+        var listJugadoresSorted = listaJugadores.sort()
         //console.log(parseInt(jornada) + parseInt(sumar1))
-        const row = new Discord.ActionRowBuilder()
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpjornada")
-            .setLabel("MVP de la Jornada")
-            .setStyle("Primary")
-            .setEmoji("0️⃣")
-        )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpposicion")
-            .setLabel("MVP de Posición por Jornadas")
-            .setStyle("Primary")
-            .setEmoji("1️⃣")
-          )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpkl")
-            .setLabel("MVP de la KL")
-            .setStyle("Primary")
-            .setEmoji("2️⃣")
-          )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpklroles")
-            .setLabel("MVP de la KL por roles")
-            .setStyle("Primary")
-            .setEmoji("3️⃣")
-          )
-
-
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
-        .setTitle("MVPs de Kemuri League")
-        .setDescription("Desde la Kemuri League creemos y reforzamos el esfuerzo que hacen los jugadores dentro de la grieta, por lo que hemos diseñado un algoritmo que recoge las estadísticas de todos los jugadores que hayan jugado en la jornada y los guarda, para que más tarde, todo el mundo pueda ver quién tuvo un mejor desempeño a lo largo de toda su estancia en la liga.\n\nPara ver la tabla de clasificación de los MVPs, selecciona el botón para el tipo de tabla que te interese.\n\n0️⃣ | Tabla general por Jornada\n1️⃣ | Tabla por roles por Jornadas\n2️⃣ | Top 5 jugadores  con más MVPs de la KL\n3️⃣ | Top 5 jugadores con más MVPs de la KL por rol")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpjornada = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Tabla general por Jornada")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpposicion = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Top 5 jugadores  con más MVPs de la KL")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpgeneral = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Top 5 jugadores con más MVPs de la KL por rol")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpgeneralposicion = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("MVPs de Kemuri League")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
+        .setTitle("MVPs de "+interaction.options.getString("posicion"))
+        //.setDescription("**Jornada "+jornada+"**")
+        .addFields(
+            {
+                "name": listJugadoresSorted[0][1],
+                "value": "MVPs: "+listJugadoresSorted[0][0],
+                inline: true
+              },
+              {
+                "name": listJugadoresSorted[1][1],
+                "value": "MVPs: "+listJugadoresSorted[1][0],
+                inline: true
+              },
+              {
+                "name": listJugadoresSorted[2][1],
+                "value": "MVPs: "+listJugadoresSorted[2][0],
+                inline: true
+              },
+              {
+                "name": listJugadoresSorted[3][1],
+                "value": "MVPs: "+listJugadoresSorted[3][0],
+                inline: true
+              },
+              {
+                "name": listJugadoresSorted[4][1],
+                "value": "MVPs: "+listJugadoresSorted[4][0],
+                inline: true
+              },
+              {
+                "name": listJugadoresSorted[5][1],
+                "value": "MVPs: "+listJugadoresSorted[5][0],
+                inline: true
+              }
+            )
+            .setFooter({text: "Kemuri League"})
         //
-        const embedsConfirm = [embed, mvpjornada, mvpposicion, mvpgeneral, mvpgeneralposicion]
+        const fail = new Discord.EmbedBuilder()
+        .setColor("#fca2ad")
+        .setTitle("No hay suficientes datos")
+        .setDescription("Error: No se ha jugado la jornada")
+        .setFooter({text: "Kemuri League"})
+        
         //console.log(Object.keys(dataGotten).length)
         //console.log(dataGotten)
-        //const divisionn = interaction.options.getString("division")
-        
+        const divisionn = interaction.options.getString("division")
         
         //console.log(divisionn)
+        if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
+            interaction.reply({embeds: [fail], components: []})
+        }else{
+            interaction.reply({embeds: [embed], components: []})
+        }
         
-        const m = await interaction.channel.send({embeds: [embed], components: [row], ephemeral: true})
-
-        const ifilter = i => i.user.id === interaction.member.user.id
-        const collector = m.createMessageComponentCollector({ filter: ifilter, time: 60000})
-
-        collector.on("collect", async i => {
-            if(i.customId === "mvpposicion"){
-                await i.deferUpdate()
-                i.editReply({content: "hola!", components: [row], ephemeral: true})
-            }
-        })
     }
 }
