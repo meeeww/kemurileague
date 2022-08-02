@@ -54,12 +54,11 @@ module.exports = {
                 dataGotten2["values"][i + 1][8], //tag 7 /
             ])
         }
-        const embed = new Discord.EmbedBuilder()
         for(var i = 0; i < listaJugadores.length; i++){
             console.log("ala")
             // Last i elements are already in place 
             if(listaJugadores[i][1] == interaction.options.getString("player")){
-                const embed = new Discord.EmbedBuilder()
+                var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("Top 5 MVPs de "+interaction.options.getString("posicion"))
                 //.setDescription("De toda la comp")
@@ -72,7 +71,7 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
             }else{
-                const embed = new Discord.EmbedBuilder()
+                var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el jugador\n¡Recuerda escribir el nombre de invocador exacto!")
@@ -82,8 +81,6 @@ module.exports = {
         }
 
         
-        console.log(listaJugadores);
-        console.log(listaJugadores[0][1])
         //console.log(parseInt(jornada) + parseInt(sumar1))
             
             //
