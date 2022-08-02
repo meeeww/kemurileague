@@ -78,37 +78,32 @@ module.exports = {
         //console.log(parseInt(jornada) + parseInt(sumar1))
             const embed = new Discord.EmbedBuilder()
             .setColor("#fca2ad")
-            .setTitle("MVPs de "+interaction.options.getString("posicion"))
+            .setTitle("Top 5 MVPs de "+interaction.options.getString("posicion"))
             //.setDescription("De toda la comp")
             .addFields(
                 {
-                    "name": "🥇"+listaJugadores[0][1]+" - "+listaJugadores[0][2],
+                    "name": "🥇 "+listaJugadores[0][1]+" | "+listaJugadores[0][2],
                     "value": "MVPs: "+listaJugadores[0][0],
                     //inline: true
                 },
                 {
-                    "name": "🥈"+listaJugadores[1][1]+" - "+listaJugadores[1][2],
+                    "name": "🥈 "+listaJugadores[1][1]+" | "+listaJugadores[1][2],
                     "value": "MVPs: "+listaJugadores[1][0],
                     //inline: true
                 },
                 {
-                    "name": "🥉"+listaJugadores[2][1]+" - "+listaJugadores[2][2],
+                    "name": "🥉 "+listaJugadores[2][1]+" | "+listaJugadores[2][2],
                     "value": "MVPs: "+listaJugadores[2][0],
                     //inline: true
                 },
                 {
-                    "name": listaJugadores[3][1]+" - "+listaJugadores[3][2],
+                    "name": listaJugadores[3][1]+" | "+listaJugadores[3][2],
                     "value": "MVPs: "+listaJugadores[3][0],
                     //inline: true
                 },
                 {
-                    "name": listaJugadores[4][1]+" - "+listaJugadores[4][2],
+                    "name": listaJugadores[4][1]+" | "+listaJugadores[4][2],
                     "value": "MVPs: "+listaJugadores[4][0],
-                    //inline: true
-                },
-                {
-                    "name": listaJugadores[5][1]+" - "+listaJugadores[5][2],
-                    "value": "MVPs: "+listaJugadores[5][0],
                     //inline: true
                 }
                 )

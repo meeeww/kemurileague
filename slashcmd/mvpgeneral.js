@@ -5,12 +5,12 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
-const { pagination } = require("reconlx")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mvpgeneral")
-    .setDescription("Tabla de MVPs general"),
+    .setName("mvpsgeneral")
+    .setDescription("Tabla de MVPs de todos los tiempos"),
+    
 
     async run(client, interaction, dataGotten){
         
@@ -23,8 +23,7 @@ module.exports = {
         //Crear google sheets api
         const googleSheets = google.sheets({version: "v4", auth: client});
     
-        ///////arreglarxd const { spreadsheetId } = require("../hojaspartidos/"+interaction.options.getString("division")+".json")
-        const { spreadsheetId } = require("../hojaspartidos/pu.json")
+        const { spreadsheetId } = require("../hojaspartidos/bbdd.json")
         //metadata
         const metaData = await googleSheets.spreadsheets.get({
             auth,
@@ -35,101 +34,96 @@ module.exports = {
         const getRows = await googleSheets.spreadsheets.values.get({
             auth,
             spreadsheetId,
-            range: "Calendario",
+            range: "Jugadores",
         })
         dataGotten2 = getRows.data
-        var jornada = dataGotten2["values"][1][13]
-        var sumar1 = dataGotten2["values"][1][14]
-        var sumar2 = dataGotten2["values"][1][15]
-        var sumar3 = dataGotten2["values"][1][16]
-        var sumar4 = dataGotten2["values"][1][17]
-        var sumar5 = dataGotten2["values"][1][18]
+        var listaJugadores = []
+        for(var i = 0; i < dataGotten2["values"][0][11]; i++){
+            listaJugadores.push([
+                dataGotten2["values"][i + 1][4], //mpvs general 0
+                dataGotten2["values"][i + 1][0], //nombre 1 /
+                dataGotten2["values"][i + 1][1], //equipo 2
+                dataGotten2["values"][i + 1][3], //mvps por rol 3
+                dataGotten2["values"][i + 1][5], //division 4
+                dataGotten2["values"][i + 1][6], //grupo 5
+                dataGotten2["values"][i + 1][7], //posicion 6 /
+                dataGotten2["values"][i + 1][8], //tag 7 /
+            ])
+        }
 
-        var toplane = dataGotten2["values"][parseInt(jornada + 3)[20]]
-        var jungle = dataGotten2["values"][parseInt(jornada + 3)[21]]
-        var mid = dataGotten2["values"][parseInt(jornada + 3)[22]]
-        var adc = dataGotten2["values"][parseInt(jornada + 3)[23]]
-        var supp = dataGotten2["values"][parseInt(jornada + 3)[24]]
-        //console.log(parseInt(jornada) + parseInt(sumar1))
-        const row = new Discord.ActionRowBuilder()
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpjornada")
-            .setLabel("MVP de la Jornada")
-            .setStyle("Primary")
-            .setEmoji("0️⃣")
-        )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpposicion")
-            .setLabel("MVP de Posición por Jornadas")
-            .setStyle("Primary")
-            .setEmoji("1️⃣")
-          )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpkl")
-            .setLabel("MVP de la KL")
-            .setStyle("Primary")
-            .setEmoji("2️⃣")
-          )
-        .addComponents(
-            new Discord.ButtonBuilder()
-            .setCustomId("mvpklroles")
-            .setLabel("MVP de la KL por roles")
-            .setStyle("Primary")
-            .setEmoji("3️⃣")
-          )
+        for(var i = 0; i < listaJugadores.length; i++){
+            // Last i elements are already in place 
+            for(var j = 0; j < ( listaJugadores.length - i -1 ); j++){
+               
+              // Checking if the item at present iteration
+              // is greater than the next iteration
+              if(listaJugadores[j][0] < listaJugadores[j+1][0]){
+                 
+                // If the condition is true then swap them
+                var temp = listaJugadores[j][0]
+                listaJugadores[j][0] = listaJugadores[j + 1][0]
+                listaJugadores[j+1][0] = temp
 
-
-        const embed = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("MVPs de Kemuri League")
-        .setDescription("Desde la Kemuri League creemos y reforzamos el esfuerzo que hacen los jugadores dentro de la grieta, por lo que hemos diseñado un algoritmo que recoge las estadísticas de todos los jugadores que hayan jugado en la jornada y los guarda, para que más tarde, todo el mundo pueda ver quién tuvo un mejor desempeño a lo largo de toda su estancia en la liga.\n\nPara ver la tabla de clasificación de los MVPs, selecciona el botón para el tipo de tabla que te interese.\n\n0️⃣ | Tabla general por Jornada\n1️⃣ | Tabla por roles por Jornadas\n2️⃣ | Top 5 jugadores  con más MVPs de la KL\n3️⃣ | Top 5 jugadores con más MVPs de la KL por rol")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpjornada = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Tabla general por Jornada")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpposicion = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Top 5 jugadores  con más MVPs de la KL")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpgeneral = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("Top 5 jugadores con más MVPs de la KL por rol")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-
-        const mvpgeneralposicion = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("MVPs de Kemuri League")
-        .setDescription("LMAO")
-        .setFooter({text: "Kemuri League"})
-        //
-        const embedsConfirm = [embed, mvpjornada, mvpposicion, mvpgeneral, mvpgeneralposicion]
-        //console.log(Object.keys(dataGotten).length)
-        //console.log(dataGotten)
-        //const divisionn = interaction.options.getString("division")
-        
-        
-        //console.log(divisionn)
-        
-        const m = await interaction.channel.send({embeds: [embed], components: [row], ephemeral: true})
-
-        const ifilter = i => i.user.id === interaction.member.user.id
-        const collector = m.createMessageComponentCollector({ filter: ifilter, time: 60000})
-
-        collector.on("collect", async i => {
-            if(i.customId === "mvpposicion"){
-                await i.deferUpdate()
-                i.editReply({content: "hola!", components: [row], ephemeral: true})
+                var temp2 = listaJugadores[j][1]
+                listaJugadores[j][1] = listaJugadores[j + 1][1]
+                listaJugadores[j+1][1] = temp2
+              }
             }
-        })
+          // Print the sorted array
+        }
+
+        
+        console.log(listaJugadores);
+        console.log(listaJugadores[0][1])
+        //console.log(parseInt(jornada) + parseInt(sumar1))
+            const embed = new Discord.EmbedBuilder()
+            .setColor("#fca2ad")
+            .setTitle("Top 5 mayores MVPs de la Kemuri League")
+            //.setDescription("De toda la comp")
+            .addFields(
+                {
+                    "name": "🥇 ["+listaJugadores[0][7]+"] "+listaJugadores[0][1] + " | "+listaJugadores[0][2]+
+                    "\n"+listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5],
+
+                    "value": "MVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][0],
+                    //inline: true
+                },
+                {
+                    "name": "🥇 ["+listaJugadores[1][7]+"] "+listaJugadores[1][1] + " | "+listaJugadores[1][2]+
+                    "\n"+listaJugadores[1][4]+" División, Grupo "+listaJugadores[1][5],
+
+                    "value": "MVPs de "+listaJugadores[1][6]+": "+listaJugadores[1][0],
+                    //inline: true
+                },
+                {
+                    "name": "🥇 ["+listaJugadores[2][7]+"] "+listaJugadores[2][1] + " | "+listaJugadores[2][2]+
+                    "\n"+listaJugadores[2][4]+" División, Grupo "+listaJugadores[2][5],
+
+                    "value": "MVPs de "+listaJugadores[2][6]+": "+listaJugadores[2][0],
+                    //inline: true
+                },
+                {
+                    "name": "🥇 ["+listaJugadores[3][7]+"] "+listaJugadores[3][1] + " | "+listaJugadores[3][2]+
+                    "\n"+listaJugadores[3][4]+" División, Grupo "+listaJugadores[3][5],
+
+                    "value": "MVPs de "+listaJugadores[3][6]+": "+listaJugadores[3][0],
+                    //inline: true
+                },
+                {
+                    "name": "🥇 ["+listaJugadores[4][7]+"] "+listaJugadores[4][1] + " | "+listaJugadores[4][2]+
+                    "\n"+listaJugadores[4][4]+" División, Grupo "+listaJugadores[4][5],
+
+                    "value": "MVPs de "+listaJugadores[4][6]+": "+listaJugadores[4][0],
+                    //inline: true
+                }
+                )
+            .setFooter({text: "Kemuri League"})
+            //
+            
+            
+            //console.log(divisionn)
+            
+        interaction.reply({embeds: [embed], components: []})
+        
     }
 }

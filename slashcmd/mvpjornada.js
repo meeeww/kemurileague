@@ -76,28 +76,28 @@ module.exports = {
         .addFields(
             {
                 "name": "🤺 Toplane 🤺",
-                "value": "**"+toplane+"** - "+ toplaneequipo,
-                inline: true
+                "value": "**"+toplane+"** | "+ toplaneequipo,
+                //inline: true
               },
               {
                 "name": "🌳 Jungla 🌳",
-                "value": "**"+jungle+"** - "+ jungleequipo,
-                inline: true
+                "value": "**"+jungle+"** | "+ jungleequipo,
+                //inline: true
               },
               {
                 "name": "🧙‍♂️ Mid 🧙‍♂️",
-                "value": "**"+mid+"** - "+ midequipo,
-                inline: true
+                "value": "**"+mid+"** | "+ midequipo,
+                //inline: true
               },
               {
                 "name": "🏹 ADC 🏹",
-                "value": "**"+adc+"** - "+ adcequipo,
-                inline: true
+                "value": "**"+adc+"** | "+ adcequipo,
+                //inline: true
               },
               {
                 "name": "🛡️ Support 🛡️",
-                "value": "**"+supp+"** - "+ suppequipo,
-                inline: true
+                "value": "**"+supp+"** | "+ suppequipo,
+                //inline: true
               }
             )
             .setFooter({text: "Kemuri League"})
