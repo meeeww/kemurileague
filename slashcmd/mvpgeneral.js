@@ -5,11 +5,12 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
+const { pagination } = require("reconlx")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mvps")
-    .setDescription("Tabla de MVPs"),
+    .setName("mvpgeneral")
+    .setDescription("Tabla de MVPs general"),
 
     async run(client, interaction, dataGotten){
         
