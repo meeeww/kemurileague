@@ -50,7 +50,7 @@ module.exports = {
                 listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0]])
             }
         }
-        var listJugadoresSorted = listaJugadores.sort();
+        var listJugadoresSorted = listaJugadores.sort((a, b) => b-a);
         console.log(listJugadoresSorted)
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
