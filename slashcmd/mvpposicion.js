@@ -47,14 +47,12 @@ module.exports = {
         var listaJugadores = []
         for(var i = 0; i < dataGotten2["values"][0][11]; i++){
             if(dataGotten2["values"][i + 1][7] == interaction.options.getString("posicion")){
-                listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0]])
+                listaJugadores.push(["puntos: "+dataGotten2["values"][i + 1][3], "nombre: "+dataGotten2["values"][i + 1][0]])
             }
         }
         
-        listaJugadores.sort((a, b) => a-b);
-        setTimeout(async () => {
-            console.log(listaJugadores)
-        }, 2000);
+        listaJugadores.sort((a, b) => a.puntos - b.puntos);
+        console.log(listaJugadores)
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
             const embed = new Discord.EmbedBuilder()
