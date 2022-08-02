@@ -67,31 +67,31 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
         .setTitle("MVPs de "+dataGotten2["values"][0][12])
-        .setDescription("Jornada "+jornada)
+        .setDescription("**Jornada "+jornada+"**")
         .addFields(
             {
-                "name": "🐃 Toplane 🐃",
-                "value": "**"+toplane+"**",
-                //inline: true
+                "name": "🤺 Toplane 🤺",
+                "value": "**"+toplane+"** - EQUIPO",
+                inline: true
               },
               {
                 "name": "🌳 Jungla 🌳",
-                "value": "**"+jungle+"**",
+                "value": "**"+jungle+"** - EQUIPO",
                 //inline: true
               },
               {
                 "name": "🧙‍♂️ Mid 🧙‍♂️",
-                "value": "**"+mid+"**",
+                "value": "**"+mid+"** - EQUIPO",
                 //inline: true
               },
               {
                 "name": "🏹 ADC 🏹",
-                "value": "**"+adc+"**",
+                "value": "**"+adc+"** - EQUIPO",
                 //inline: true
               },
               {
                 "name": "🛡️ Support 🛡️",
-                "value": "**"+supp+"**",
+                "value": "**"+supp+"** - EQUIPO",
                 //inline: true
               }
             )
