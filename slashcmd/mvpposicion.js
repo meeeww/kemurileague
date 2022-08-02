@@ -74,7 +74,7 @@ module.exports = {
         }
 
         
-        console.log(listaJugadores)
+        console.log(listaJugadores);
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
             const embed = new Discord.EmbedBuilder()
