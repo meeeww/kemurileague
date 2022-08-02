@@ -50,8 +50,11 @@ module.exports = {
                 listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0]])
             }
         }
+        
         listaJugadores.sort((a, b) => a-b);
-        console.log(listaJugadores)
+        setTimeout(async () => {
+            console.log(listaJugadores)
+        }, 2000);
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
             const embed = new Discord.EmbedBuilder()
@@ -104,7 +107,7 @@ module.exports = {
             
             //console.log(divisionn)
             interaction.reply({embeds: [embed], components: []})
-        }, 1000);
+        }, 3000);
         
     }
 }
