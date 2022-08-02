@@ -30,7 +30,7 @@ module.exports = {
         //Crear google sheets api
         const googleSheets = google.sheets({version: "v4", auth: client});
     
-        const { spreadsheetId } = require("1pk8Bp4f6Jni27RipbB-UNBSTuAW4gNKD4DD3rvxrf9E")
+        const { spreadsheetId } = "1pk8Bp4f6Jni27RipbB"
         //metadata
         const metaData = await googleSheets.spreadsheets.get({
             auth,
