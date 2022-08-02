@@ -57,7 +57,7 @@ module.exports = {
                
               // Checking if the item at present iteration
               // is greater than the next iteration
-              if(listaJugadores[j][0] < listaJugadores[j+1][0]){
+              if(listaJugadores[j][3] < listaJugadores[j+1][3]){
                  
                 // If the condition is true then swap them
                 var temp = listaJugadores[j][0]
@@ -67,14 +67,36 @@ module.exports = {
                 var temp2 = listaJugadores[j][1]
                 listaJugadores[j][1] = listaJugadores[j + 1][1]
                 listaJugadores[j+1][1] = temp2
+
+                var temp3 = listaJugadores[j][2]
+                listaJugadores[j][2] = listaJugadores[j + 1][2]
+                listaJugadores[j+1][2] = temp3
+
+                var temp4 = listaJugadores[j][3]
+                listaJugadores[j][3] = listaJugadores[j + 1][3]
+                listaJugadores[j+1][3] = temp4
+
+                var temp5 = listaJugadores[j][4]
+                listaJugadores[j][4] = listaJugadores[j + 1][4]
+                listaJugadores[j+1][4] = temp5
+
+                var temp6 = listaJugadores[j][5]
+                listaJugadores[j][5] = listaJugadores[j + 1][5]
+                listaJugadores[j+1][5] = temp6
+
+                var temp7 = listaJugadores[j][6]
+                listaJugadores[j][6] = listaJugadores[j + 1][6]
+                listaJugadores[j+1][6] = temp7
+
+                var temp8 = listaJugadores[j][7]
+                listaJugadores[j][7] = listaJugadores[j + 1][7]
+                listaJugadores[j+1][7] = temp8
               }
             }
           // Print the sorted array
         }
 
         
-        console.log(listaJugadores);
-        console.log(listaJugadores[0][1])
         //console.log(parseInt(jornada) + parseInt(sumar1))
             const embed = new Discord.EmbedBuilder()
             .setColor("#fca2ad")
@@ -85,35 +107,35 @@ module.exports = {
                     "name": "🥇 ["+listaJugadores[0][7]+"] "+listaJugadores[0][1] + " | "+listaJugadores[0][2]+
                     "\n"+listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5],
 
-                    "value": "MVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][0],
+                    "value": "MVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][3],
                     //inline: true
                 },
                 {
                     "name": "🥈 ["+listaJugadores[1][7]+"] "+listaJugadores[1][1] + " | "+listaJugadores[1][2]+
                     "\n"+listaJugadores[1][4]+" División, Grupo "+listaJugadores[1][5],
 
-                    "value": "MVPs de "+listaJugadores[1][6]+": "+listaJugadores[1][0],
+                    "value": "MVPs de "+listaJugadores[1][6]+": "+listaJugadores[1][3],
                     //inline: true
                 },
                 {
                     "name": "🥉 ["+listaJugadores[2][7]+"] "+listaJugadores[2][1] + " | "+listaJugadores[2][2]+
                     "\n"+listaJugadores[2][4]+" División, Grupo "+listaJugadores[2][5],
 
-                    "value": "MVPs de "+listaJugadores[2][6]+": "+listaJugadores[2][0],
+                    "value": "MVPs de "+listaJugadores[2][6]+": "+listaJugadores[2][3],
                     //inline: true
                 },
                 {
                     "name": "["+listaJugadores[3][7]+"] "+listaJugadores[3][1] + " | "+listaJugadores[3][2]+
                     "\n"+listaJugadores[3][4]+" División, Grupo "+listaJugadores[3][5],
 
-                    "value": "MVPs de "+listaJugadores[3][6]+": "+listaJugadores[3][0],
+                    "value": "MVPs de "+listaJugadores[3][6]+": "+listaJugadores[3][3],
                     //inline: true
                 },
                 {
                     "name": "["+listaJugadores[4][7]+"] "+listaJugadores[4][1] + " | "+listaJugadores[4][2]+
                     "\n"+listaJugadores[4][4]+" División, Grupo "+listaJugadores[4][5],
 
-                    "value": "MVPs de "+listaJugadores[4][6]+": "+listaJugadores[4][0],
+                    "value": "MVPs de "+listaJugadores[4][6]+": "+listaJugadores[4][3],
                     //inline: true
                 }
                 )
