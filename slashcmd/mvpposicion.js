@@ -103,11 +103,7 @@ module.exports = {
             const divisionn = interaction.options.getString("division")
             
             //console.log(divisionn)
-            if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
-                interaction.reply({embeds: [fail], components: []})
-            }else{
-                interaction.reply({embeds: [embed], components: []})
-            }
+            interaction.reply({embeds: [embed], components: []})
         }, 1000);
         
     }
