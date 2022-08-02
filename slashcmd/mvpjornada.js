@@ -75,27 +75,27 @@ module.exports = {
         .setDescription("**Jornada "+jornada+"**")
         .addFields(
             {
-                "name": "🤺 Toplane 🤺",
+                "name": "🤺 | Toplane",
                 "value": "**"+toplane+"** | "+ toplaneequipo,
                 //inline: true
               },
               {
-                "name": "🌳 Jungla 🌳",
+                "name": "🌳 | Jungla",
                 "value": "**"+jungle+"** | "+ jungleequipo,
                 //inline: true
               },
               {
-                "name": "🧙‍♂️ Mid 🧙‍♂️",
+                "name": "🧙‍♂️ | Mid",
                 "value": "**"+mid+"** | "+ midequipo,
                 //inline: true
               },
               {
-                "name": "🏹 ADC 🏹",
+                "name": "🏹 | ADC",
                 "value": "**"+adc+"** | "+ adcequipo,
                 //inline: true
               },
               {
-                "name": "🛡️ Support 🛡️",
+                "name": "🛡️ | Support",
                 "value": "**"+supp+"** | "+ suppequipo,
                 //inline: true
               }
