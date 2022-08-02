@@ -47,7 +47,7 @@ module.exports = {
         var listaJugadores = []
         for(var i = 0; i < dataGotten2["values"][0][11]; i++){
             if(dataGotten2["values"][i + 1][7] == interaction.options.getString("posicion")){
-                listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0]])
+                listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0], dataGotten2["values"][i + 1][1]])
             }
         }
 
@@ -82,32 +82,32 @@ module.exports = {
             //.setDescription("De toda la comp")
             .addFields(
                 {
-                    "name": "🥇"+listaJugadores[0][1],
+                    "name": "🥇"+listaJugadores[0][1]+" - "+listaJugadores[0][2],
                     "value": "MVPs: "+listaJugadores[0][0],
                     inline: true
                 },
                 {
-                    "name": "🥈"+listaJugadores[1][1],
+                    "name": "🥈"+listaJugadores[1][1]+" - "+listaJugadores[1][2],
                     "value": "MVPs: "+listaJugadores[1][0],
                     inline: true
                 },
                 {
-                    "name": "🥉"+listaJugadores[2][1],
+                    "name": "🥉"+listaJugadores[2][1]+" - "+listaJugadores[2][2],
                     "value": "MVPs: "+listaJugadores[2][0],
                     inline: true
                 },
                 {
-                    "name": listaJugadores[3][1],
+                    "name": listaJugadores[3][1]+" - "+listaJugadores[3][2],
                     "value": "MVPs: "+listaJugadores[3][0],
                     inline: true
                 },
                 {
-                    "name": listaJugadores[4][1],
+                    "name": listaJugadores[4][1]+" - "+listaJugadores[4][2],
                     "value": "MVPs: "+listaJugadores[4][0],
                     inline: true
                 },
                 {
-                    "name": listaJugadores[5][1],
+                    "name": listaJugadores[5][1]+" - "+listaJugadores[5][2],
                     "value": "MVPs: "+listaJugadores[5][0],
                     inline: true
                 }
