@@ -8,8 +8,8 @@ const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mvpsjornada")
-    .setDescription("Tabla de MVPs por Jornadas")
+    .setName("mvpsposición")
+    .setDescription("Tabla de MVPs por Rol")
     .addStringOption(option => option.setName("posicion").setDescription("Rol: ").setRequired(true).addChoices(
         { name: 'Toplaners', value: "Toplaners"},
         { name: 'Junglas', value: "Junglas"},
