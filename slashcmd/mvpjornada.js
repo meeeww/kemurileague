@@ -111,7 +111,7 @@ module.exports = {
         if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
             interaction.reply({embeds: [fail], components: []})
         }else{
-            interaction.channel.send({embeds: [embed], components: []})
+            interaction.reply({embeds: [embed], components: []})
         }
         
     }
