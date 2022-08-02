@@ -9,7 +9,7 @@ const { pagination } = require("reconlx")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mpvgeneralroles")
+    .setName("mvpgeneralroles")
     .setDescription("Tabla de MVPs general por roles"),
 
     async run(client, interaction, dataGotten){

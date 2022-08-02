@@ -8,7 +8,7 @@ const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("mpvsjornada")
+    .setName("mvpsjornada")
     .setDescription("Tabla de MVPs por Jornadas")
     .addStringOption(option => option.setName("division").setDescription("División y grupo: ").setRequired(true).addChoices(
         { name: 'Primera División - Grupo 1', value: "pu"},
@@ -58,11 +58,11 @@ module.exports = {
         dataGotten2 = getRows.data
         var jornada = interaction.options.getString("jornada")
         
-        var toplane = dataGotten2["values"][(parseInt(jornada)) + 3][20]
-        var jungle = dataGotten2["values"][(parseInt(jornada)) + 3][21]
-        var mid = dataGotten2["values"][(parseInt(jornada)) + 3][22]
-        var adc = dataGotten2["values"][(parseInt(jornada)) + 3][23]
-        var supp = dataGotten2["values"][(parseInt(jornada)) + 3][24]
+        var toplane = dataGotten2["values"][(parseInt(jornada)) + 2][20]
+        var jungle = dataGotten2["values"][(parseInt(jornada)) + 2][21]
+        var mid = dataGotten2["values"][(parseInt(jornada)) + 2][22]
+        var adc = dataGotten2["values"][(parseInt(jornada)) + 2][23]
+        var supp = dataGotten2["values"][(parseInt(jornada)) + 2][24]
         //console.log(parseInt(jornada) + parseInt(sumar1))
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
@@ -97,15 +97,22 @@ module.exports = {
             )
             .setFooter({text: "Kemuri League"})
         //
+        const fail = new Discord.EmbedBuilder()
+        .setColor("#fca2ad")
+        .setTitle("No hay suficientes datos")
+        .setDescription("Error: No se ha jugado la jornada")
+        .setFooter({text: "Kemuri League"})
         
         //console.log(Object.keys(dataGotten).length)
         //console.log(dataGotten)
         const divisionn = interaction.options.getString("division")
         
         //console.log(divisionn)
+        if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
+            interaction.channel.send({embeds: [fail], components: []})
+        }else{
+            interaction.channel.send({embeds: [embed], components: []})
+        }
         
-        interaction.channel.send({embeds: [embed], components: []}).then(msg => {
-            msg.edit({embeds: [embed], components: []});
-        });
     }
 }
