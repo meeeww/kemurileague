@@ -58,11 +58,11 @@ module.exports = {
         dataGotten2 = getRows.data
         var jornada = interaction.options.getString("jornada")
         
-        var toplane = dataGotten2["values"][parseInt(jornada + 2)][20]
-        var jungle = dataGotten2["values"][parseInt(jornada + 2)][21]
-        var mid = dataGotten2["values"][parseInt(jornada + 2)][22]
-        var adc = dataGotten2["values"][parseInt(jornada + 2)][23]
-        var supp = dataGotten2["values"][parseInt(jornada + 2)][24]
+        var toplane = dataGotten2["values"][(parseInt(jornada)) + 3][20]
+        var jungle = dataGotten2["values"][(parseInt(jornada)) + 3][21]
+        var mid = dataGotten2["values"][(parseInt(jornada)) + 3][22]
+        var adc = dataGotten2["values"][(parseInt(jornada)) + 3][23]
+        var supp = dataGotten2["values"][(parseInt(jornada)) + 3][24]
         //console.log(parseInt(jornada) + parseInt(sumar1))
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
