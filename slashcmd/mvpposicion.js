@@ -50,8 +50,8 @@ module.exports = {
                 listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0]])
             }
         }
-        var listJugadoresSorted = listaJugadores.sort((a, b) => a-b);
-        console.log(listJugadoresSorted)
+        listaJugadores.sort((a, b) => a-b);
+        console.log(listaJugadores)
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
             const embed = new Discord.EmbedBuilder()
@@ -60,34 +60,34 @@ module.exports = {
             //.setDescription("**Jornada "+jornada+"**")
             .addFields(
                 {
-                    "name": listJugadoresSorted[0][1],
-                    "value": "MVPs: "+listJugadoresSorted[0][0],
-                    inline: true
+                    "name": "🥇"+listaJugadores[0][1],
+                    "value": "MVPs: "+listaJugadores[0][0],
+                    //inline: true
                 },
                 {
-                    "name": listJugadoresSorted[1][1],
-                    "value": "MVPs: "+listJugadoresSorted[1][0],
-                    inline: true
+                    "name": "🥈"+listaJugadores[1][1],
+                    "value": "MVPs: "+listaJugadores[1][0],
+                    //inline: true
                 },
                 {
-                    "name": listJugadoresSorted[2][1],
-                    "value": "MVPs: "+listJugadoresSorted[2][0],
-                    inline: true
+                    "name": "🥉"+listaJugadores[2][1],
+                    "value": "MVPs: "+listaJugadores[2][0],
+                    //inline: true
                 },
                 {
-                    "name": listJugadoresSorted[3][1],
-                    "value": "MVPs: "+listJugadoresSorted[3][0],
-                    inline: true
+                    "name": listaJugadores[3][1],
+                    "value": "MVPs: "+listaJugadores[3][0],
+                    //inline: true
                 },
                 {
-                    "name": listJugadoresSorted[4][1],
-                    "value": "MVPs: "+listJugadoresSorted[4][0],
-                    inline: true
+                    "name": listaJugadores[4][1],
+                    "value": "MVPs: "+listaJugadores[4][0],
+                    //inline: true
                 },
                 {
-                    "name": listJugadoresSorted[5][1],
-                    "value": "MVPs: "+listJugadoresSorted[5][0],
-                    inline: true
+                    "name": listaJugadores[5][1],
+                    "value": "MVPs: "+listaJugadores[5][0],
+                    //inline: true
                 }
                 )
                 .setFooter({text: "Kemuri League"})
