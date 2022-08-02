@@ -82,35 +82,35 @@ module.exports = {
             //.setDescription("De toda la comp")
             .addFields(
                 {
-                    "name": "🥇 ["+listaJugadores[0][7]+"] "+listaJugadores[0][1] + " | "+listaJugadores[0][2],
+                    "name": "🥇 ["+listaJugadores[0][7]+"] "+listaJugadores[0][1] + " | "+listaJugadores[0][2]+
+                    "\n"+listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5],
 
-                    "value": "**"+listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5]+"**"+
-                    "\nMVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][0],
+                    "value": "MVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][0],
                     //inline: true
                 },
                 {
-                    "name": "🥇 ["+listaJugadores[1][7]+"] "+listaJugadores[1][1] + " | "+listaJugadores[1][2]+
+                    "name": "🥈 ["+listaJugadores[1][7]+"] "+listaJugadores[1][1] + " | "+listaJugadores[1][2]+
                     "\n"+listaJugadores[1][4]+" División, Grupo "+listaJugadores[1][5],
 
                     "value": "MVPs de "+listaJugadores[1][6]+": "+listaJugadores[1][0],
                     //inline: true
                 },
                 {
-                    "name": "🥇 ["+listaJugadores[2][7]+"] "+listaJugadores[2][1] + " | "+listaJugadores[2][2]+
+                    "name": "🥉 ["+listaJugadores[2][7]+"] "+listaJugadores[2][1] + " | "+listaJugadores[2][2]+
                     "\n"+listaJugadores[2][4]+" División, Grupo "+listaJugadores[2][5],
 
                     "value": "MVPs de "+listaJugadores[2][6]+": "+listaJugadores[2][0],
                     //inline: true
                 },
                 {
-                    "name": "🥇 ["+listaJugadores[3][7]+"] "+listaJugadores[3][1] + " | "+listaJugadores[3][2]+
+                    "name": "["+listaJugadores[3][7]+"] "+listaJugadores[3][1] + " | "+listaJugadores[3][2]+
                     "\n"+listaJugadores[3][4]+" División, Grupo "+listaJugadores[3][5],
 
                     "value": "MVPs de "+listaJugadores[3][6]+": "+listaJugadores[3][0],
                     //inline: true
                 },
                 {
-                    "name": "🥇 ["+listaJugadores[4][7]+"] "+listaJugadores[4][1] + " | "+listaJugadores[4][2]+
+                    "name": "["+listaJugadores[4][7]+"] "+listaJugadores[4][1] + " | "+listaJugadores[4][2]+
                     "\n"+listaJugadores[4][4]+" División, Grupo "+listaJugadores[4][5],
 
                     "value": "MVPs de "+listaJugadores[4][6]+": "+listaJugadores[4][0],
