@@ -84,7 +84,7 @@ module.exports = {
                 {
                     "name": "🥇 ["+listaJugadores[0][7]+"] "+listaJugadores[0][1] + " | "+listaJugadores[0][2],
 
-                    "value": listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5]+
+                    "value": "**"+listaJugadores[0][4]+" División, Grupo "+listaJugadores[0][5]+"**"+
                     "\nMVPs de "+listaJugadores[0][6]+": "+listaJugadores[0][0],
                     //inline: true
                 },
