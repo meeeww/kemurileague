@@ -19,15 +19,15 @@ module.exports = {
         { name: 'Tercera División - Grupo 2', value: "td"},
     ))
     .addStringOption(option => option.setName("jornada").setDescription("Jornada: ").setRequired(true).addChoices(
-        { name: 'Uno', value: 1},
-        { name: 'Dos', value: 2},
-        { name: 'Tres', value: 3},
-        { name: 'Cuatro', value: 4},
-        { name: 'Cinco', value: 5},
-        { name: 'Seis', value: 6},
-        { name: 'Siete', value: 7},
-        { name: 'Ocho', value: 8},
-        { name: 'Nueve', value: 9},
+        { name: 'Uno', value: "1"},
+        { name: 'Dos', value: "2"},
+        { name: 'Tres', value: "3"},
+        { name: 'Cuatro', value: "4"},
+        { name: 'Cinco', value: "5"},
+        { name: 'Seis', value: "6"},
+        { name: 'Siete', value: "7"},
+        { name: 'Ocho', value: "8"},
+        { name: 'Nueve', value: "9"},
     )),
     
 
@@ -58,11 +58,11 @@ module.exports = {
         dataGotten2 = getRows.data
         var jornada = interaction.options.getString("jornada")
         
-        var toplane = dataGotten2["values"][jornada + 2][20]
-        var jungle = dataGotten2["values"][jornada + 2][21]
-        var mid = dataGotten2["values"][jornada + 2][22]
-        var adc = dataGotten2["values"][jornada + 2][23]
-        var supp = dataGotten2["values"][jornada + 2][24]
+        var toplane = dataGotten2["values"][parseInt(jornada + 2)][20]
+        var jungle = dataGotten2["values"][parseInt(jornada + 2)][21]
+        var mid = dataGotten2["values"][parseInt(jornada + 2)][22]
+        var adc = dataGotten2["values"][parseInt(jornada + 2)][23]
+        var supp = dataGotten2["values"][parseInt(jornada + 2)][24]
         //console.log(parseInt(jornada) + parseInt(sumar1))
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
