@@ -70,11 +70,17 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-            }else{
+            }else if(listaJugadores[i][1] == interaction.options.getString("player")){
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el jugador\n¡Recuerda escribir el nombre de invocador exacto!")
+                .setFooter({text: "Kemuri League"})
+            }else{
+                var embed = new Discord.EmbedBuilder()
+                .setColor("#fca2ad")
+                .setTitle("Error")
+                .setDescription("Consulta a un administrador")
                 .setFooter({text: "Kemuri League"})
             }
           // Print the sorted array
