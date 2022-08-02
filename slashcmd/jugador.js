@@ -55,8 +55,8 @@ module.exports = {
             ])
         }
         for(var i = 0; i < listaJugadores.length; i++){
-            console.log("ala")
-            // Last i elements are already in place 
+            // Last i elements are already in place
+            console.log(listaJugadores[i][1] + "- " + interaction.options.getString("player"))
             if(listaJugadores[i][1] == interaction.options.getString("player")){
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
