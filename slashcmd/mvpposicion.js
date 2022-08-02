@@ -108,7 +108,7 @@ module.exports = {
             }else{
                 interaction.reply({embeds: [embed], components: []})
             }
-        }, 1000);
+        }, 5000);
         
     }
 }
