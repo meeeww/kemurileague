@@ -51,6 +51,7 @@ module.exports = {
             }
         }
         var listJugadoresSorted = listaJugadores.sort()
+        console.log(listJugadoresSorted)
         //console.log(parseInt(jornada) + parseInt(sumar1))
         const embed = new Discord.EmbedBuilder()
         .setColor("#fca2ad")
