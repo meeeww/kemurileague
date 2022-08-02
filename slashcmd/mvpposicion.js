@@ -53,60 +53,62 @@ module.exports = {
         var listJugadoresSorted = listaJugadores.sort()
         console.log(listJugadoresSorted)
         //console.log(parseInt(jornada) + parseInt(sumar1))
-        const embed = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("MVPs de "+interaction.options.getString("posicion"))
-        //.setDescription("**Jornada "+jornada+"**")
-        .addFields(
-            {
-                "name": listJugadoresSorted[0][1],
-                "value": "MVPs: "+listJugadoresSorted[0][0],
-                inline: true
-              },
-              {
-                "name": listJugadoresSorted[1][1],
-                "value": "MVPs: "+listJugadoresSorted[1][0],
-                inline: true
-              },
-              {
-                "name": listJugadoresSorted[2][1],
-                "value": "MVPs: "+listJugadoresSorted[2][0],
-                inline: true
-              },
-              {
-                "name": listJugadoresSorted[3][1],
-                "value": "MVPs: "+listJugadoresSorted[3][0],
-                inline: true
-              },
-              {
-                "name": listJugadoresSorted[4][1],
-                "value": "MVPs: "+listJugadoresSorted[4][0],
-                inline: true
-              },
-              {
-                "name": listJugadoresSorted[5][1],
-                "value": "MVPs: "+listJugadoresSorted[5][0],
-                inline: true
-              }
-            )
+        setTimeout(async () => {
+            const embed = new Discord.EmbedBuilder()
+            .setColor("#fca2ad")
+            .setTitle("MVPs de "+interaction.options.getString("posicion"))
+            //.setDescription("**Jornada "+jornada+"**")
+            .addFields(
+                {
+                    "name": listJugadoresSorted[0][1],
+                    "value": "MVPs: "+listJugadoresSorted[0][0],
+                    inline: true
+                },
+                {
+                    "name": listJugadoresSorted[1][1],
+                    "value": "MVPs: "+listJugadoresSorted[1][0],
+                    inline: true
+                },
+                {
+                    "name": listJugadoresSorted[2][1],
+                    "value": "MVPs: "+listJugadoresSorted[2][0],
+                    inline: true
+                },
+                {
+                    "name": listJugadoresSorted[3][1],
+                    "value": "MVPs: "+listJugadoresSorted[3][0],
+                    inline: true
+                },
+                {
+                    "name": listJugadoresSorted[4][1],
+                    "value": "MVPs: "+listJugadoresSorted[4][0],
+                    inline: true
+                },
+                {
+                    "name": listJugadoresSorted[5][1],
+                    "value": "MVPs: "+listJugadoresSorted[5][0],
+                    inline: true
+                }
+                )
+                .setFooter({text: "Kemuri League"})
+            //
+            const fail = new Discord.EmbedBuilder()
+            .setColor("#fca2ad")
+            .setTitle("No hay suficientes datos")
+            .setDescription("Error: No se ha jugado la jornada")
             .setFooter({text: "Kemuri League"})
-        //
-        const fail = new Discord.EmbedBuilder()
-        .setColor("#fca2ad")
-        .setTitle("No hay suficientes datos")
-        .setDescription("Error: No se ha jugado la jornada")
-        .setFooter({text: "Kemuri League"})
-        
-        //console.log(Object.keys(dataGotten).length)
-        //console.log(dataGotten)
-        const divisionn = interaction.options.getString("division")
-        
-        //console.log(divisionn)
-        if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
-            interaction.reply({embeds: [fail], components: []})
-        }else{
-            interaction.reply({embeds: [embed], components: []})
-        }
+            
+            //console.log(Object.keys(dataGotten).length)
+            //console.log(dataGotten)
+            const divisionn = interaction.options.getString("division")
+            
+            //console.log(divisionn)
+            if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
+                interaction.reply({embeds: [fail], components: []})
+            }else{
+                interaction.reply({embeds: [embed], components: []})
+            }
+        }, 1000);
         
     }
 }
