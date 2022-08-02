@@ -70,17 +70,17 @@ module.exports = {
               }
             }
           // Print the sorted array
-          console.log(listaJugadores);
         }
 
         
         console.log(listaJugadores);
+        console.log(listaJugadores[0][1])
         //console.log(parseInt(jornada) + parseInt(sumar1))
         setTimeout(async () => {
             const embed = new Discord.EmbedBuilder()
             .setColor("#fca2ad")
             .setTitle("MVPs de "+interaction.options.getString("posicion"))
-            //.setDescription("**Jornada "+jornada+"**")
+            .setDescription("**Jornada "+jornada+"**")
             .addFields(
                 {
                     "name": "🥇"+listaJugadores[0][1],
