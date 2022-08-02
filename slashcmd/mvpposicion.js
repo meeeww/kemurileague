@@ -41,7 +41,7 @@ module.exports = {
         const getRows = await googleSheets.spreadsheets.values.get({
             auth,
             spreadsheetId,
-            range: "Calendario",
+            range: "Jugadores",
         })
         dataGotten2 = getRows.data
         var listaJugadores = {}
