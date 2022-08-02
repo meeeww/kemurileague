@@ -57,7 +57,7 @@ module.exports = {
                
               // Checking if the item at present iteration
               // is greater than the next iteration
-              if(listaJugadores[j][0] > listaJugadores[j+1][0]){
+              if(listaJugadores[j][0] < listaJugadores[j+1][0]){
                  
                 // If the condition is true then swap them
                 var temp = listaJugadores[j][0]
@@ -79,37 +79,37 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setColor("#fca2ad")
             .setTitle("MVPs de "+interaction.options.getString("posicion"))
-            .setDescription("De toda la comp")
+            //.setDescription("De toda la comp")
             .addFields(
                 {
                     "name": "🥇"+listaJugadores[0][1],
                     "value": "MVPs: "+listaJugadores[0][0],
-                    //inline: true
+                    inline: true
                 },
                 {
                     "name": "🥈"+listaJugadores[1][1],
                     "value": "MVPs: "+listaJugadores[1][0],
-                    //inline: true
+                    inline: true
                 },
                 {
                     "name": "🥉"+listaJugadores[2][1],
                     "value": "MVPs: "+listaJugadores[2][0],
-                    //inline: true
+                    inline: true
                 },
                 {
                     "name": listaJugadores[3][1],
                     "value": "MVPs: "+listaJugadores[3][0],
-                    //inline: true
+                    inline: true
                 },
                 {
                     "name": listaJugadores[4][1],
                     "value": "MVPs: "+listaJugadores[4][0],
-                    //inline: true
+                    inline: true
                 },
                 {
                     "name": listaJugadores[5][1],
                     "value": "MVPs: "+listaJugadores[5][0],
-                    //inline: true
+                    inline: true
                 }
                 )
             .setFooter({text: "Kemuri League"})
