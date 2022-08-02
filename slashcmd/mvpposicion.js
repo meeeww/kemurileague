@@ -80,7 +80,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setColor("#fca2ad")
             .setTitle("MVPs de "+interaction.options.getString("posicion"))
-            .setDescription("**Jornada "+jornada+"**")
+            .setDescription("De toda la comp")
             .addFields(
                 {
                     "name": "🥇"+listaJugadores[0][1],
