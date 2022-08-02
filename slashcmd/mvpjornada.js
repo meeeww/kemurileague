@@ -70,27 +70,27 @@ module.exports = {
         .setDescription("Jornada "+jornada)
         .addFields(
             {
-                "name": "Toplane",
+                "name": "🐃 Toplane 🐃",
                 "value": "**"+toplane+"**",
                 //inline: true
               },
               {
-                "name": "Jungla",
+                "name": "🌳 Jungla 🌳",
                 "value": "**"+jungle+"**",
                 //inline: true
               },
               {
-                "name": "Mid",
+                "name": "🧙‍♂️ Mid 🧙‍♂️",
                 "value": "**"+mid+"**",
                 //inline: true
               },
               {
-                "name": "ADC",
+                "name": "🏹 ADC 🏹",
                 "value": "**"+adc+"**",
                 //inline: true
               },
               {
-                "name": "Support",
+                "name": "🛡️ Support 🛡️",
                 "value": "**"+supp+"**",
                 //inline: true
               }
