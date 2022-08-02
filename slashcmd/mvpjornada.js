@@ -109,7 +109,7 @@ module.exports = {
         
         //console.log(divisionn)
         if(toplane == "nadie" && jungle == "nadie" && mid == "nadie" && adc == "nadie" && supp == "nadie"){
-            interaction.channel.send({embeds: [fail], components: []})
+            interaction.reply({embeds: [fail], components: []})
         }else{
             interaction.channel.send({embeds: [embed], components: []})
         }
