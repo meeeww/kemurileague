@@ -54,7 +54,7 @@ module.exports = {
                 dataGotten2["values"][i + 1][8], //tag 7 /
             ])
         }
-        
+        const embed = new Discord.EmbedBuilder()
         for(var i = 0; i < listaJugadores.length; i++){
             console.log("ala")
             // Last i elements are already in place 
@@ -71,14 +71,12 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-                interaction.reply({embeds: [embed], components: []})
             }else{
                 const embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el jugador\n¡Recuerda escribir el nombre de invocador exacto!")
                 .setFooter({text: "Kemuri League"})
-                interaction.reply({embeds: [embed], components: []})
             }
           // Print the sorted array
         }
@@ -93,7 +91,7 @@ module.exports = {
             
             //console.log(divisionn)
             
-        //interaction.reply({embeds: [embed], components: []})
+        interaction.reply({embeds: [embed], components: [], ephemeral: true})
         
     }
 }
