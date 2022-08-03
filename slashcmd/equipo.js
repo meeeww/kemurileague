@@ -73,13 +73,13 @@ module.exports = {
                 .addFields(
                     {
                         "name": "🛂 | General\n",
-                        "value": "**\nNombre: **"+listaJugadores[i][0]+"\n"+
-                        "**Tag: **"+listaJugadores[i][1]+"\n"+
-                        "**División: **"+listaJugadores[i][2]+"\n"+
-                        "**Grupo: **"+listaJugadores[i][3]+"\n"+
-                        "**Hashtag: **"+listaJugadores[i][4]+"\n"+
-                        "**Logo: **"+listaJugadores[i][11]+"\n"+
-                        "**Color: **"+listaJugadores[i][12]+"\n"
+                        "value": "**\nNombre: **"+listaEquipos[i][0]+"\n"+
+                        "**Tag: **"+listaEquipos[i][1]+"\n"+
+                        "**División: **"+listaEquipos[i][2]+"\n"+
+                        "**Grupo: **"+listaEquipos[i][3]+"\n"+
+                        "**Hashtag: **"+listaEquipos[i][4]+"\n"+
+                        "**Logo: **"+listaEquipos[i][11]+"\n"+
+                        "**Color: **"+listaEquipos[i][12]+"\n"
                         ,
                         //inline: true
                     }
@@ -89,12 +89,12 @@ module.exports = {
                 .addFields(
                     {
                         "name": "📲 | Redes\n",
-                        "value": "**\Twitter: **"+listaJugadores[i][5]+"\n"+
-                        "**Twitch: **"+listaJugadores[i][6]+"\n"+
-                        "**Instagram: **"+listaJugadores[i][7]+"\n"+
-                        "**YouTube: **"+listaJugadores[i][8]+"\n"+
-                        "**TikTok: **"+listaJugadores[i][9]+"\n"+
-                        "**Web: **"+listaJugadores[i][10]+"\n"
+                        "value": "**\Twitter: **"+listaEquipos[i][5]+"\n"+
+                        "**Twitch: **"+listaEquipos[i][6]+"\n"+
+                        "**Instagram: **"+listaEquipos[i][7]+"\n"+
+                        "**YouTube: **"+listaEquipos[i][8]+"\n"+
+                        "**TikTok: **"+listaEquipos[i][9]+"\n"+
+                        "**Web: **"+listaEquipos[i][10]+"\n"
                         ,
                         //inline: true
                     }
@@ -102,7 +102,6 @@ module.exports = {
                 .setFooter({text: "Kemuri League"})
 
                 var embeds2 = [general, redes]
-                console.log("aqui1")
 
                 
                 break
@@ -113,7 +112,6 @@ module.exports = {
                 .setDescription("Error: No se ha encontrado el equipo\n¡Recuerda escribir el nombre exacto!")
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embedfail]
-                console.log("aqui2")
                 
             }else{
                 var embederror = new Discord.EmbedBuilder()
@@ -122,7 +120,6 @@ module.exports = {
                 .setDescription("Consulta a un administrador")
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embederror]
-                console.log("aqui3")
                 
             }
           // Print the sorted array
