@@ -67,7 +67,7 @@ module.exports = {
             // Last i elements are already in place
             var equipo1 = listaEquipos[i][1]
             var equipo2 = interaction.options.getString("team")
-            
+            console.log(equipo1 +" "+ equipo2)
             if(equipo1 == equipo2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
