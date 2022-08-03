@@ -133,7 +133,7 @@ module.exports = {
             //
             
             await pagination({
-                embeds: embeds, // Array of embeds objects
+                embeds: embeds2, // Array of embeds objects
                 ephemeral: true,
                 author: interaction.member.user,
                 interaction: interaction,
