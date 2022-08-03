@@ -102,28 +102,31 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
 
-                var embeds = [general, redes]
+                var embeds2 = [general, redes]
+                console.log("aqui1")
 
                 
                 break
             }else if(equipo1 != equipo2){
-                var embed = new Discord.EmbedBuilder()
+                var embedfail = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el equipo\n¡Recuerda escribir el nombre exacto!")
                 .setFooter({text: "Kemuri League"})
-                var embeds = [embed]
+                var embeds2 = [embedfail]
+                console.log("aqui2")
             }else{
-                var embed = new Discord.EmbedBuilder()
+                var embederror = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("Error")
                 .setDescription("Consulta a un administrador")
                 .setFooter({text: "Kemuri League"})
-                var embeds = [embed]
+                var embeds2 = [embederror]
+                console.log("aqui3")
             }
           // Print the sorted array
         }
-        console.log(embeds)
+        console.log(embeds2)
         
         //console.log(parseInt(jornada) + parseInt(sumar1))
             
