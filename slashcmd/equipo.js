@@ -89,7 +89,7 @@ module.exports = {
                 .addFields(
                     {
                         "name": "📲 | Redes\n",
-                        "value": "**\Twitter: **"+listaEquipos[i][5]+"\n"+
+                        "value": "**\nTwitter: **"+listaEquipos[i][5]+"\n"+
                         "**Twitch: **"+listaEquipos[i][6]+"\n"+
                         "**Instagram: **"+listaEquipos[i][7]+"\n"+
                         "**YouTube: **"+listaEquipos[i][8]+"\n"+
