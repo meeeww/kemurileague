@@ -5,7 +5,7 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
-
+const { pagination } = require("reconlx")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("jugador")
