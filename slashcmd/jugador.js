@@ -54,14 +54,13 @@ module.exports = {
                 dataGotten2["values"][i + 1][8], //tag 7 /
             ])
         }
-        for(var i = 0; i < listaJugadores.length; i++){
+        for(var i = 0; i < listaJugadores.length; i++){//no se por que no pilla eso
             // Last i elements are already in place
             console.log(listaJugadores[i][1] + "- " + interaction.options.getString("player"))
             var jugador1 = listaJugadores[i][1]
             var jugador2 = interaction.options.getString("player")
-            console.log(typeof jugador1)
-            console.log(typeof jugador2)
-            if(jugador1 == jugador2){
+            
+            if(jugador1 === jugador2){
                 
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
