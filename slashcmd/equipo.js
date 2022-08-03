@@ -63,6 +63,7 @@ module.exports = {
         }
         var equipo1
         var equipo2
+        console.log(listaEquipos.length)
         for(var i = 0; i < listaEquipos.length; i++){//no se por que no pilla eso
             // Last i elements are already in place
             var equipo1 = listaEquipos[i][1]
@@ -115,6 +116,7 @@ module.exports = {
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embedfail]
                 console.log("aqui2")
+                break
             }else{
                 var embederror = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
@@ -123,6 +125,7 @@ module.exports = {
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embederror]
                 console.log("aqui3")
+                break
             }
           // Print the sorted array
         }
