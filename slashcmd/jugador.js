@@ -97,8 +97,8 @@ module.exports = {
                 .setDescription("Estadísticas Generales")
                 .addFields(
                     {
-                        "name": "General\n",
-                        "value": "**Partidos Jugados: **"+listaJugadores[i][8]+"\n"+
+                        "name": "🛡️| General\n",
+                        "value": "**\nPartidos Jugados: **"+listaJugadores[i][8]+"\n"+
                         "**Victorias: **"+listaJugadores[i][9]+"\n"+
                         "**Derrotas: **"+listaJugadores[i][10]+"\n"+
                         "**Kills: **"+listaJugadores[i][12]+"\n"+
@@ -114,8 +114,8 @@ module.exports = {
                 .setDescription("Estadísticas de Ataque")
                 .addFields(
                     {
-                        "name": "Ataque\n",
-                        "value": "**Kills: **"+listaJugadores[i][12]+"\n"+
+                        "name": "⚔️| Ataque\n",
+                        "value": "**\nKills: **"+listaJugadores[i][12]+"\n"+
                         "**Muertes: **"+listaJugadores[i][13]+"\n"+
                         "**Asistencias: **"+listaJugadores[i][14]+"\n"+
                         "**KDA: **"+"HAY QUE CALCULARLO"+"\n"+
@@ -136,8 +136,8 @@ module.exports = {
                 .setDescription("Estadísticas de Objetivos")
                 .addFields(
                     {
-                        "name": "Objetivos\n",
-                        "value": "**Objetivos robados: **"+listaJugadores[i][23]+"\n"+
+                        "name": "🎯| Objetivos\n",
+                        "value": "**\nObjetivos robados: **"+listaJugadores[i][23]+"\n"+
                         "**Torretas destruidas: **"+listaJugadores[i][24]+"\n"+
                         "**Inhibidores destruidos: **"+listaJugadores[i][25]+"\n"+
                         "**Primera torre: **"+listaJugadores[i][29]+"\n"
@@ -150,8 +150,8 @@ module.exports = {
                 .setDescription("Estadísticas de Economía")
                 .addFields(
                     {
-                        "name": "Economía\n",
-                        "value": "**Oro/partida: **"+listaJugadores[i][26]+"\n"+
+                        "name": "👀| Economía\n",
+                        "value": "**\nOro/partida: **"+listaJugadores[i][26]+"\n"+
                         "**Oro/min: **"+listaJugadores[i][27]+"\n"+
                         "**Minions/min: **"+listaJugadores[i][28]+"\n"
                         ,
@@ -163,7 +163,7 @@ module.exports = {
                 .setDescription("Estadísticas de Visión")
                 .addFields(
                     {
-                        "name": "Visión\n",
+                        "name": "👀| Visión\n",
                         "value": "**\nVisión/min: **"+listaJugadores[i][30]+"\n"+
                         "**Wards por partida: **"+listaJugadores[i][31]+"\n"+
                         "**Wards/min: **"+listaJugadores[i][32]+"\n"+
@@ -212,12 +212,12 @@ module.exports = {
                 buttons: [
                     {
                         value: TypesButtons.previous,
-                        label: 'Previous Page',
+                        label: 'Anterior',
                         style: StylesButton.Primary
                     },
                     {
                         value: TypesButtons.next,
-                        label: 'Next Page',
+                        label: 'Siguiente',
                         style: StylesButton.Success
                     }
                 ]
