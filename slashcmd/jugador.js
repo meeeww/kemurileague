@@ -111,7 +111,7 @@ module.exports = {
 
                 pagination({
                     embeds: embeds,
-                    message: message,
+                    message: interaction,
                     time: 10000
                 })
                 break
