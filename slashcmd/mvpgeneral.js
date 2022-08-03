@@ -38,7 +38,7 @@ module.exports = {
         })
         dataGotten2 = getRows.data
         var listaJugadores = []
-        for(var i = 0; i < dataGotten2["values"][0][11]; i++){
+        for(var i = 0; i < dataGotten2["values"][0][39]; i++){
             listaJugadores.push([
                 dataGotten2["values"][i + 1][4], //mpvs general 0
                 dataGotten2["values"][i + 1][0], //nombre 1 /
