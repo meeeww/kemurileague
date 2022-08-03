@@ -43,7 +43,7 @@ module.exports = {
         })
         dataGotten2 = getRows.data
         var listaEquipos = []
-        for(var i = 0; i < dataGotten2["values"][0][14]; i++){
+        for(var i = 0; i < dataGotten2["values"][1][14]; i++){
             listaEquipos.push([
                 dataGotten2["values"][i + 1][0], //nombre 0
                 dataGotten2["values"][i + 1][1], //tag 1
@@ -63,12 +63,10 @@ module.exports = {
         }
         var equipo1
         var equipo2
-        console.log(listaEquipos.length)
         for(var i = 0; i < listaEquipos.length; i++){//no se por que no pilla eso
             // Last i elements are already in place
-            var equipo1 = listaEquipos[i][1]
+            var equipo1 = listaEquipos[i][0]
             var equipo2 = interaction.options.getString("team")
-            console.log(equipo1 +" "+ equipo2)
             if(equipo1 == equipo2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
@@ -116,7 +114,7 @@ module.exports = {
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embedfail]
                 console.log("aqui2")
-                break
+                
             }else{
                 var embederror = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
@@ -125,7 +123,7 @@ module.exports = {
                 .setFooter({text: "Kemuri League"})
                 var embeds2 = [embederror]
                 console.log("aqui3")
-                break
+                
             }
           // Print the sorted array
         }
