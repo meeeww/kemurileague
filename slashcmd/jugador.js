@@ -164,7 +164,7 @@ module.exports = {
                 .addFields(
                     {
                         "name": "Visión\n",
-                        "value": "**Visión/min: **"+listaJugadores[i][30]+"\n"+
+                        "value": "**\nVisión/min: **"+listaJugadores[i][30]+"\n"+
                         "**Wards por partida: **"+listaJugadores[i][31]+"\n"+
                         "**Wards/min: **"+listaJugadores[i][32]+"\n"+
                         "**Pinks/minuto: **"+listaJugadores[i][33]+"\n"+
