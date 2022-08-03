@@ -34,10 +34,10 @@ module.exports = {
                 range: "Equipos",
             })
             dataGotten = getRows.data
-            console.log(dataGotten["values"][0][6])
-            for(var i = 0; i < dataGotten["values"][0][6]; i++){//numero 2 para crear canales
+            console.log(dataGotten["values"][0][14])
+            for(var i = 0; i < dataGotten["values"][0][14]; i++){//numero 2 para crear canales
                 message.guild.channels.create({
-                    name: "🔱┃"+(dataGotten["values"][0][7+i]),
+                    name: "🔱┃"+(dataGotten["values"][0][15+i]),
                     type: 4,
                     permissionOverwrites: [
                         {
@@ -57,7 +57,7 @@ module.exports = {
                 for(var i= 0; i < 3; i++){
                     message.guild.channels.cache.forEach(ch => {
                         if(ch.type == ChannelType.GuildCategory){
-                            if(ch.name == "🔱┃"+(dataGotten["values"][0][7+i])){
+                            if(ch.name == "🔱┃"+(dataGotten["values"][0][15+i])){
                                 categorias.push([ch.id, ch.name])
                             }
                         }
@@ -111,12 +111,12 @@ module.exports = {
                     roleId.push([role.id, role.name])
                 });
                 //console.log(roleId)
-                for(var i = 0; i < dataGotten["values"][1][6]; i++){
+                for(var i = 0; i < dataGotten["values"][1][14]; i++){
                     for(var j = 0; j < roleId.length; j++){
                         //console.log(j)
                         if(dataGotten["values"][i+1][0] == roleId[j][1]){
                             //console.log(dataGotten["values"][i+1][0]+" = "+roleId[j][1])
-                            buenosRoles.push([roleId[j][0], roleId[j][1], "🔱┃"+dataGotten["values"][i+1][1]+" División"]) //roleid, rolename, roledivision
+                            buenosRoles.push([roleId[j][0], roleId[j][1], "🔱┃"+dataGotten["values"][i+1][2]+" División"]) //roleid, rolename, roledivision
                         }
                     }
                 }

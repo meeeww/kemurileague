@@ -36,12 +36,12 @@ module.exports = {
             //console.log(dataGotten)
             if(message.member.roles.cache.has("998940088857796700")){
                 message.channel.send("Pong! En "+client.ws.ping+ "ms")
-                for(var i = 0; i < dataGotten["values"][1][6]; i++)
+                for(var i = 0; i < dataGotten["values"][1][14]; i++)
                 //console.log("hecho "+(i+1))
                 //console.log(dataGotten["values"][i+1][0])
                 message.guild.roles.create({ 
                     name: dataGotten["values"][i+1][0],
-                    color: dataGotten["values"][i+1][4],
+                    color: dataGotten["values"][i+1][12],
                     hoist: true,
                     permissions: [],
                     mentionable: true
