@@ -43,7 +43,7 @@ module.exports = {
         })
         dataGotten2 = getRows.data
         var listaEquipos = []
-        for(var i = 0; i < dataGotten2["values"][0][39]; i++){
+        for(var i = 0; i < dataGotten2["values"][0][14]; i++){
             listaEquipos.push([
                 dataGotten2["values"][i + 1][0], //nombre 0
                 dataGotten2["values"][i + 1][1], //tag 1
