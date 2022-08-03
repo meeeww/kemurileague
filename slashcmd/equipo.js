@@ -86,7 +86,7 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-                var Redes = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
+                var redes = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
                 .addFields(
                     {
                         "name": "📲 | Redes\n",
