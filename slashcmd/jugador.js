@@ -137,8 +137,9 @@ module.exports = {
             
             //console.log(divisionn)
             pagination({
+                author: interaction.member.user,
                 embeds: embeds,
-                message: interaction,
+                channel: interaction.channel,
                 time: 10000
             })
         interaction.reply({embeds: [embed], components: [], ephemeral: true})
