@@ -94,7 +94,6 @@ module.exports = {
             if(jugador1 == jugador2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                .setDescription("Estadísticas Generales")
                 .addFields(
                     {
                         "name": "🛡️| General\n",
@@ -111,7 +110,6 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
                 var ataque = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                .setDescription("Estadísticas de Ataque")
                 .addFields(
                     {
                         "name": "⚔️| Ataque\n",
@@ -133,7 +131,6 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
                 var objetivos = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                .setDescription("Estadísticas de Objetivos")
                 .addFields(
                     {
                         "name": "🎯| Objetivos\n",
@@ -147,7 +144,6 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
                 var economia = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                .setDescription("Estadísticas de Economía")
                 .addFields(
                     {
                         "name": "👀| Economía\n",
@@ -160,7 +156,6 @@ module.exports = {
                     )
                 .setFooter({text: "Kemuri League"})
                 var vision = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                .setDescription("Estadísticas de Visión")
                 .addFields(
                     {
                         "name": "👀| Visión\n",
