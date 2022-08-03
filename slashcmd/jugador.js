@@ -94,19 +94,86 @@ module.exports = {
             if(jugador1 == jugador2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
-                //.setDescription("De toda la comp")
+                .setDescription("Estadísticas Generales")
                 .addFields(
                     {
-                        "name": "asd",
-                        "value": "asd",
+                        "name": "General\n",
+                        "value": "**Partidos Jugados: **"+listaJugadores[i][8]+"\n"+
+                        "**Victorias: **"+listaJugadores[i][9]+"\n"+
+                        "**Derrotas: **"+listaJugadores[i][10]+"\n"+
+                        "**Kills: **"+listaJugadores[i][12]+"\n"+
+                        "**Muertes: **"+listaJugadores[i][13]+"\n"+
+                        "**Asistencias: **"+listaJugadores[i][14]+"\n"+
+                        "**Splits Jugados: **"+listaJugadores[i][35]+"\n"
+                        ,
                         //inline: true
                     }
                     )
                 .setFooter({text: "Kemuri League"})
                 var ataque = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
+                .setDescription("Estadísticas de Ataque")
+                .addFields(
+                    {
+                        "name": "Ataque\n",
+                        "value": "**Kills: **"+listaJugadores[i][12]+"\n"+
+                        "**Muertes: **"+listaJugadores[i][13]+"\n"+
+                        "**Asistencias: **"+listaJugadores[i][14]+"\n"+
+                        "**KDA: **"+"HAY QUE CALCULARLO"+"\n"+
+                        "**KP Promedio: **"+listaJugadores[i][15]+"\n"+
+                        "**Daño/min: **"+listaJugadores[i][16]+"\n"+
+                        "**Doublekills: **"+listaJugadores[i][17]+"\n"+
+                        "**Triplekills: **"+listaJugadores[i][18]+"\n"+
+                        "**Quadrakills: **"+listaJugadores[i][19]+"\n"+
+                        "**Pentakills: **"+listaJugadores[i][20]+"\n"+
+                        "**Solokills: **"+listaJugadores[i][21]+"\n"+
+                        "**Firstblood: **"+listaJugadores[i][22]+"\n"
+                        ,
+                        //inline: true
+                    }
+                    )
+                .setFooter({text: "Kemuri League"})
                 var objetivos = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
+                .setDescription("Estadísticas de Objetivos")
+                .addFields(
+                    {
+                        "name": "Objetivos\n",
+                        "value": "**Objetivos robados: **"+listaJugadores[i][23]+"\n"+
+                        "**Torretas destruidas: **"+listaJugadores[i][24]+"\n"+
+                        "**Inhibidores destruidos: **"+listaJugadores[i][25]+"\n"+
+                        "**Primera torre: **"+listaJugadores[i][29]+"\n"
+                        ,
+                        //inline: true
+                    }
+                    )
+                .setFooter({text: "Kemuri League"})
                 var economia = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
+                .setDescription("Estadísticas de Economía")
+                .addFields(
+                    {
+                        "name": "Economía\n",
+                        "value": "**Oro/partida: **"+listaJugadores[i][26]+"\n"+
+                        "**Oro/min: **"+listaJugadores[i][27]+"\n"+
+                        "**Minions/min: **"+listaJugadores[i][28]+"\n"
+                        ,
+                        //inline: true
+                    }
+                    )
+                .setFooter({text: "Kemuri League"})
                 var vision = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
+                .setDescription("Estadísticas de Visión")
+                .addFields(
+                    {
+                        "name": "Visión\n",
+                        "value": "**Visión/min: **"+listaJugadores[i][30]+"\n"+
+                        "**Wards por partida: **"+listaJugadores[i][31]+"\n"+
+                        "**Wards/min: **"+listaJugadores[i][32]+"\n"+
+                        "**Pinks/minuto: **"+listaJugadores[i][33]+"\n"+
+                        "**Wards destruidos/min: **"+listaJugadores[i][34]+"\n"
+                        ,
+                        //inline: true
+                    }
+                    )
+                .setFooter({text: "Kemuri League"})
 
                 var embeds = [general, ataque, objetivos, economia, vision]
 
@@ -157,7 +224,7 @@ module.exports = {
             });
             //console.log(divisionn)
         
-        interaction.reply({embeds: [embed], components: [], ephemeral: true})
+        //interaction.reply({embeds: [embed], components: [], ephemeral: true})
         
     }
 }
