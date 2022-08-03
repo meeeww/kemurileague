@@ -107,7 +107,7 @@ module.exports = {
                 var economia = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
                 var vision = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
 
-                const embeds = [general, ataque, objetivos, economia, vision]
+                var embeds = [general, ataque, objetivos, economia, vision]
 
                 
                 break
@@ -117,12 +117,14 @@ module.exports = {
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el jugador\n¡Recuerda escribir el nombre de invocador exacto!")
                 .setFooter({text: "Kemuri League"})
+                var embeds = [embed]
             }else{
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("Error")
                 .setDescription("Consulta a un administrador")
                 .setFooter({text: "Kemuri League"})
+                var embeds = [embed]
             }
           // Print the sorted array
         }
