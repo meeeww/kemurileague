@@ -60,7 +60,7 @@ module.exports = {
             var jugador1 = listaJugadores[i][1]
             var jugador2 = interaction.options.getString("player")
             
-            if(jugador1 === jugador2){
+            if(jugador1 != jugador2){
                 
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
@@ -74,7 +74,7 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-            }else if(jugador1 != jugador2){
+            }else if(jugador1 == jugador2){
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
