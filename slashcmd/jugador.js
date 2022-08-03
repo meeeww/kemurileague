@@ -109,11 +109,7 @@ module.exports = {
 
                 const embeds = [general, ataque, objetivos, economia, vision]
 
-                pagination({
-                    embeds: embeds,
-                    message: interaction,
-                    time: 10000
-                })
+                
                 break
             }else if(jugador1 != jugador2){
                 var embed = new Discord.EmbedBuilder()
@@ -138,6 +134,11 @@ module.exports = {
             
             
             //console.log(divisionn)
+            pagination({
+                embeds: embeds,
+                message: interaction,
+                time: 10000
+            })
         interaction.reply({embeds: [embed], components: [], ephemeral: true})
         
     }
