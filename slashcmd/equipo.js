@@ -123,7 +123,7 @@ module.exports = {
             }
           // Print the sorted array
         }
-
+        console.log(embeds)
         
         //console.log(parseInt(jornada) + parseInt(sumar1))
             
