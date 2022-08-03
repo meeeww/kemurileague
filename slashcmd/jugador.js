@@ -5,7 +5,8 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const { spreadsheetsEnfrentamientos } = require("../hojaspartidos/pu.json")
-const { pagination } = require("reconlx")
+const { pagination, TypesButtons, StylesButton } = require('@devraelfreeze/discordjs-pagination');
+
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("jugador")
@@ -134,14 +135,28 @@ module.exports = {
             
             //
             
-            
-            //console.log(divisionn)
-            pagination({
+            await pagination({
+                embeds: embeds, // Array of embeds objects
                 author: interaction.member.user,
-                embeds: embeds,
-                channel: interaction.channel,
-                time: 10000
-            })
+                interaction: interaction,
+                time: 40000, // 40 seconds
+                fastSkip: false,
+                pageTravel: false,
+                buttons: [
+                    {
+                        value: TypesButtons.previous,
+                        label: 'Previous Page',
+                        style: StylesButton.Primary
+                    },
+                    {
+                        value: TypesButtons.next,
+                        label: 'Next Page',
+                        style: StylesButton.Success
+                    }
+                ]
+            });
+            //console.log(divisionn)
+        
         interaction.reply({embeds: [embed], components: [], ephemeral: true})
         
     }
