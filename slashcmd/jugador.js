@@ -54,13 +54,15 @@ module.exports = {
                 dataGotten2["values"][i + 1][8], //tag 7 /
             ])
         }
+        var jugador1
+        var jugador2
         for(var i = 0; i < listaJugadores.length; i++){//no se por que no pilla eso
             // Last i elements are already in place
             console.log(listaJugadores[i][1] + "- " + interaction.options.getString("player"))
             var jugador1 = listaJugadores[i][1]
             var jugador2 = interaction.options.getString("player")
             
-            if(jugador1 != jugador2){
+            if(jugador1 == jugador2){
                 
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
@@ -74,7 +76,8 @@ module.exports = {
                     }
                     )
                 .setFooter({text: "Kemuri League"})
-            }else if(jugador1 == jugador2){
+                break
+            }else if(jugador1 != jugador2){
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
@@ -97,7 +100,6 @@ module.exports = {
             
             
             //console.log(divisionn)
-            
         interaction.reply({embeds: [embed], components: [], ephemeral: true})
         
     }
