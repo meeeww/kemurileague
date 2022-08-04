@@ -70,7 +70,7 @@ module.exports = {
             if(equipo1 == equipo2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
-                .setThumbnail(listaEquipos[i][11])
+                .setThumbnail("https://drive.google.com/uc?export=view&id="+listaEquipos[i][11])
                 .addFields(
                     {
                         "name": "🛂 | General\n",
