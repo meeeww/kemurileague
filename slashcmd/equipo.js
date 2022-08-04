@@ -69,7 +69,7 @@ module.exports = {
             var equipo2 = interaction.options.getString("team")
             if(equipo1 == equipo2){
                 
-                var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
+                var general = new Discord.EmbedBuilder().setColor(listaEquipos[i][12]).setTitle("Información de "+equipo1)
                 .setThumbnail("https://drive.google.com/uc?export=view&id="+listaEquipos[i][11])
                 .addFields(
                     {
