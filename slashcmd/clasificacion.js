@@ -117,8 +117,6 @@ module.exports = {
         
         //console.log(divisionn)
         
-        interaction.channel.send({embeds: [embed], components: []}).then(msg => {
-            msg.edit({embeds: [embed], components: []});
-        });
+        interaction.reply({embeds: [embed], components: []})
     }
 }

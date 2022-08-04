@@ -43,7 +43,7 @@ module.exports = {
         //console.log(dataGotten)
         const invocador = interaction.options.getString("invocador")
         const equipo = interaction.options.getString("equipo")
-
+        var contenido
         for(var i = 0; i < Object.keys(jugadores).length; i++){
             if(jugadores["values"][i][0] === invocador && jugadores["values"][i][1] === equipo){
                 var tag = jugadores["values"][i][6]
@@ -53,14 +53,14 @@ module.exports = {
                     var role = interaction.guild.roles.cache.find(role => role.name === equipo);
                     await interaction.member.roles.add(role);
                     await interaction.member.setNickname(`[${tag}] ${name}`)
+                    contenido = "Roles añadidos correctamente"
                 }, 1000);
             }
             else
             {
-                setTimeout(async () => {
-                    //await message.editReply({ content: "Error 02: No estás en la base de datos. Contacta con un administrador para solucionar el fallo, "+ invocador, ephemeral: true})
-                }, 1000);
+                contenido = "Error 02: No estás en la base de datos. Abre un ticket para ponerte en contacto con el staff para llegar a una solución"
             }
         }
+        interaction.reply({content: contenido+", "+ invocador, ephemeral: true})
     }
 }
