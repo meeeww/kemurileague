@@ -114,6 +114,6 @@ client.on("messageCreate", async(message) => {
 
 
 
-client.login("OTk4ODg5NDMwNDQ0MTU0OTEw.GJaFPa.i0llFD1QhS8iLt0dwk3C8RHJHCn6fiTnAHK_gY");
+client.login("OTk4ODg5NDMwNDQ0MTU0OTEw.GAelaS.zRW4ML6SSkxO44mcMCTXB1hmIHOwfSJPscsS1E");
 
 //app.listen(1338, (req, res) => console.log("running on 1337"));
