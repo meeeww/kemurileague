@@ -3,7 +3,7 @@ const { google } = require("googleapis");
 const app = express();
 const Discord = require("discord.js");
 const client = new Discord.Client({
-    intents: 36663
+    intents: 65527
 })
 var dataGotten
 const fs = require("fs");
@@ -111,6 +111,7 @@ client.on("messageCreate", async(message) => {
         cmd.execute(client, message, args, dataGotten)
     }
 })
+
 
 
 client.login("OTk4ODg5NDMwNDQ0MTU0OTEw.GJaFPa.i0llFD1QhS8iLt0dwk3C8RHJHCn6fiTnAHK_gY");
