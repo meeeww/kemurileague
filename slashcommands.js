@@ -11,7 +11,7 @@ for(const file of slashcommandsFiles){
     commands.push(slash.data.toJSON())
 }
 
-const rest = new REST({ version: "9"}).setToken("OTk4ODg5NDMwNDQ0MTU0OTEw.GJaFPa.i0llFD1QhS8iLt0dwk3C8RHJHCn6fiTnAHK_gY")
+const rest = new REST({ version: "9"}).setToken("OTk4ODg5NDMwNDQ0MTU0OTEw.GAelaS.zRW4ML6SSkxO44mcMCTXB1hmIHOwfSJPscsS1E")
 
 createSlash()
 
