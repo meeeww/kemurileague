@@ -117,8 +117,8 @@ module.exports = {
                         "**Muertes: **"+listaJugadores[i][13]+"\n"+
                         "**Asistencias: **"+listaJugadores[i][14]+"\n"+
                         "**KDA: **"+Math.floor(KDA)+"\n"+
-                        "**KP Promedio: **"+Math.floor(listaJugadores[i][15])+"\n"+
-                        "**Daño/min: **"+Math.floor(listaJugadores[i][16])+"\n"+
+                        "**KP Promedio: **"+Math.floor(parseInt(listaJugadores[i][15]))+"\n"+
+                        "**Daño/min: **"+Math.floor(parseInt(listaJugadores[i][16]))+"\n"+
                         "**Doublekills: **"+listaJugadores[i][17]+"\n"+
                         "**Triplekills: **"+listaJugadores[i][18]+"\n"+
                         "**Quadrakills: **"+listaJugadores[i][19]+"\n"+
@@ -148,8 +148,8 @@ module.exports = {
                     {
                         "name": "💸 | Economía\n",
                         "value": "**\nOro/partida: **"+listaJugadores[i][26]+"\n"+
-                        "**Oro/min: **"+Math.floor(listaJugadores[i][27])+"\n"+
-                        "**Minions/min: **"+Math.floor(listaJugadores[i][28])+"\n"
+                        "**Oro/min: **"+Math.floor(parseInt(listaJugadores[i][27]))+"\n"+
+                        "**Minions/min: **"+Math.floor(parseInt(listaJugadores[i][28]))+"\n"
                         ,
                         //inline: true
                     }
