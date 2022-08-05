@@ -2,6 +2,7 @@ const express = require("express");
 const { google } = require("googleapis");
 const app = express();
 const Discord = require("discord.js");
+const { EmbedBuilder } = require('discord.js');
 const client = new Discord.Client({
     intents: 65527
 })
@@ -112,6 +113,33 @@ client.on("messageCreate", async(message) => {
     }
 })
 
+client.on('guildMemberAdd', member => {
+    const normativaCanal = "998935845899866142"
+    const noticiasCanal = "998936445718908978"
+    const enlacesCanal = "998936678213369928"
+    const rolesCanal = "1000515485068181634"
+    const soporteCanal = "998933543512195162"
+    const embed = new EmbedBuilder()
+	.setColor("#fca2ad")
+	.setTitle("¡Bienvenido <@"+member.id+"> a la Kemuri League!")
+	.setDescription("Recuerda que puedes ver nuestra normativa en "+member.guild.channels.cache.get(normativaCanal)+", noticias en "+member.guild.channels.cache.get(noticiasCanal)+" y enlaces en "+member.guild.channels.cache.get(enlacesCanal)+"!\n\nSi ya estás registrado y quieres obtener los roles de tu equipo, ¡ve a "+member.guild.channels.cache.get(rolesCanal)+" y sigue las instrucciones!\n\nSi tienes alguna duda sobre la liga, funcionamiento, sanciones y demás, recuerda leer la normativa y no olvides que puedes resolver cualquier duda o problema en "+member.guild.channels.cache.get(soporteCanal)+"!")
+	.setImage('https://drive.google.com/uc?export=view&id=1SRwDYq_yEco2h8-SOdQr09pFr7yfx131')
+	.setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
+
+    member.guild.channels.get('998935555855372338').send("Welcome"); 
+    member.roles.add("1005163648089600080")
+});
+
+client.on('guildMemberRemove', member => {
+    const embed = new EmbedBuilder()
+	.setColor("#fca2ad")
+	.setTitle("¡Bienvenido <@"+member.id+"> a la Kemuri League!")
+	.setDescription("Recue")
+	.setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
+
+    member.guild.channels.get('998935555855372338').send("Welcome"); 
+    member.roles.add("1005163648089600080")
+});
 
 
 client.login("OTk4ODg5NDMwNDQ0MTU0OTEw.GAelaS.zRW4ML6SSkxO44mcMCTXB1hmIHOwfSJPscsS1E");

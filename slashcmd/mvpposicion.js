@@ -107,7 +107,7 @@ module.exports = {
                     //inline: true
                 }
                 )
-            .setFooter({text: "Kemuri League"})
+                .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
             //
             
             

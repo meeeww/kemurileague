@@ -84,7 +84,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var redes = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+equipo1)
                 .addFields(
                     {
@@ -99,7 +99,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
 
                 var embeds2 = [general, redes]
 
@@ -110,7 +110,7 @@ module.exports = {
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el equipo\n¡Recuerda escribir el nombre exacto!")
-                .setFooter({text: "Kemuri League"})
+                .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var embeds2 = [embedfail]
                 
             }else{
@@ -118,7 +118,7 @@ module.exports = {
                 .setColor("#fca2ad")
                 .setTitle("Error")
                 .setDescription("Consulta a un administrador")
-                .setFooter({text: "Kemuri League"})
+                .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var embeds2 = [embederror]
                 
             }

@@ -108,7 +108,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var ataque = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
                 .addFields(
                     {
@@ -129,7 +129,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var objetivos = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
                 .addFields(
                     {
@@ -142,7 +142,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var economia = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
                 .addFields(
                     {
@@ -154,7 +154,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var vision = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
                 .addFields(
                     {
@@ -168,7 +168,7 @@ module.exports = {
                         //inline: true
                     }
                     )
-                .setFooter({text: "Kemuri League"})
+                    .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
 
                 var embeds = [general, ataque, objetivos, economia, vision]
 
@@ -179,14 +179,14 @@ module.exports = {
                 .setColor("#fca2ad")
                 .setTitle("No hay suficientes datos")
                 .setDescription("Error: No se ha encontrado el jugador\n¡Recuerda escribir el nombre de invocador exacto!")
-                .setFooter({text: "Kemuri League"})
+                .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var embeds = [embed]
             }else{
                 var embed = new Discord.EmbedBuilder()
                 .setColor("#fca2ad")
                 .setTitle("Error")
                 .setDescription("Consulta a un administrador")
-                .setFooter({text: "Kemuri League"})
+                .setFooter({text: "Kemuri League", iconURL: "https://drive.google.com/uc?export=view&id=1FmLfL1cKMXHw1a13-T1NrNV_OWc-mqwI"})
                 var embeds = [embed]
             }
           // Print the sorted array
