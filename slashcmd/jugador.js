@@ -116,9 +116,9 @@ module.exports = {
                         "value": "**\nKills: **"+listaJugadores[i][12]+"\n"+
                         "**Muertes: **"+listaJugadores[i][13]+"\n"+
                         "**Asistencias: **"+listaJugadores[i][14]+"\n"+
-                        "**KDA: **"+KDA+"\n"+
-                        "**KP Promedio: **"+listaJugadores[i][15]+"\n"+
-                        "**Daño/min: **"+listaJugadores[i][16]+"\n"+
+                        "**KDA: **"+Math.floor(KDA)+"\n"+
+                        "**KP Promedio: **"+Math.floor(listaJugadores[i][15])+"\n"+
+                        "**Daño/min: **"+Math.floor(listaJugadores[i][16])+"\n"+
                         "**Doublekills: **"+listaJugadores[i][17]+"\n"+
                         "**Triplekills: **"+listaJugadores[i][18]+"\n"+
                         "**Quadrakills: **"+listaJugadores[i][19]+"\n"+
@@ -137,7 +137,7 @@ module.exports = {
                         "value": "**\nObjetivos robados: **"+listaJugadores[i][23]+"\n"+
                         "**Torretas destruidas: **"+listaJugadores[i][24]+"\n"+
                         "**Inhibidores destruidos: **"+listaJugadores[i][25]+"\n"+
-                        "**Primera torre: **"+listaJugadores[i][29]+"\n"
+                        "**Primeras torres: **"+listaJugadores[i][29]+"\n"
                         ,
                         //inline: true
                     }
@@ -148,8 +148,8 @@ module.exports = {
                     {
                         "name": "💸 | Economía\n",
                         "value": "**\nOro/partida: **"+listaJugadores[i][26]+"\n"+
-                        "**Oro/min: **"+listaJugadores[i][27]+"\n"+
-                        "**Minions/min: **"+listaJugadores[i][28]+"\n"
+                        "**Oro/min: **"+Math.floor(listaJugadores[i][27])+"\n"+
+                        "**Minions/min: **"+Math.floor(listaJugadores[i][28])+"\n"
                         ,
                         //inline: true
                     }
@@ -159,11 +159,11 @@ module.exports = {
                 .addFields(
                     {
                         "name": "👀 | Visión\n",
-                        "value": "**\nVisión/min: **"+listaJugadores[i][30]+"\n"+
-                        "**Wards por partida: **"+listaJugadores[i][31]+"\n"+
-                        "**Wards/min: **"+listaJugadores[i][32]+"\n"+
-                        "**Pinks/minuto: **"+listaJugadores[i][33]+"\n"+
-                        "**Wards destruidos/min: **"+listaJugadores[i][34]+"\n"
+                        "value": "**\nVisión/min: **"+Math.floor(listaJugadores[i][30])+"\n"+
+                        "**Wards por partida: **"+Math.floor(listaJugadores[i][31])+"\n"+
+                        "**Wards/min: **"+Math.floor(listaJugadores[i][32])+"\n"+
+                        "**Pinks/minuto: **"+Math.floor(listaJugadores[i][33])+"\n"+
+                        "**Wards destruidos/min: **"+Math.floor(listaJugadores[i][34])+"\n"
                         ,
                         //inline: true
                     }
