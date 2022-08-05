@@ -161,7 +161,7 @@ module.exports = {
                         "name": "👀 | Visión\n",
                         "value": "**\nVisión/min: **"+Math.floor(listaJugadores[i][30])+"\n"+
                         "**Wards por partida: **"+Math.floor(listaJugadores[i][31])+"\n"+
-                        "**Wards/min: **"+Math.floor(listaJugadores[i][32])+"\n"+
+                        "**Wards/min: **"+Math.floor(parseInt(listaJugadores[i][32]))+"\n"+
                         "**Pinks/minuto: **"+Math.floor(listaJugadores[i][33])+"\n"+
                         "**Wards destruidos/min: **"+Math.floor(listaJugadores[i][34])+"\n"
                         ,
