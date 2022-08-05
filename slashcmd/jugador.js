@@ -90,7 +90,7 @@ module.exports = {
             // Last i elements are already in place
             var jugador1 = listaJugadores[i][1]
             var jugador2 = interaction.options.getString("player")
-            var KDA = ((listaJugadores[i][12] + listaJugadores[i][13] + listaJugadores[i][14])/3)
+            var KDA = ((parseInt(listaJugadores[i][12]) + parseInt(listaJugadores[i][14]))/parseInt(listaJugadores[i][13]))
             if(jugador1 == jugador2){
                 
                 var general = new Discord.EmbedBuilder().setColor("#fca2ad").setTitle("Información de "+jugador1)
