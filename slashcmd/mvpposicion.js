@@ -47,7 +47,7 @@ module.exports = {
         var listaJugadores = []
         for(var i = 0; i < dataGotten2["values"][0][39]; i++){
             if(dataGotten2["values"][i + 1][7] == interaction.options.getString("posicion")){
-                listaJugadores.push([parseInt(dataGotten2["values"][i + 1][3]), dataGotten2["values"][i + 1][0], dataGotten2["values"][i + 1][1]])
+                listaJugadores.push([parseInt(dataGotten2["values"][i + 1][3]), dataGotten2["values"][i + 1][0], dataGotten2["values"][i + 1][1], dataGotten2["values"][i + 1][5]])
             }
         }
         
@@ -65,6 +65,14 @@ module.exports = {
                 var temp2 = listaJugadores[j][1]
                 listaJugadores[j][1] = listaJugadores[j + 1][1]
                 listaJugadores[j+1][1] = temp2
+
+                var temp2 = listaJugadores[j][2]
+                listaJugadores[j][2] = listaJugadores[j + 1][2]
+                listaJugadores[j+1][2] = temp2
+
+                var temp2 = listaJugadores[j][0]
+                listaJugadores[j][0] = listaJugadores[j + 1][3]
+                listaJugadores[j+1][3] = temp2
               }
             }
           // Print the sorted arra
@@ -80,27 +88,27 @@ module.exports = {
             //.setDescription("De toda la comp")
             .addFields(
                 {
-                    "name": "🥇 "+listaJugadores[0][1]+" | "+listaJugadores[0][2],
+                    "name": "🥇 "+listaJugadores[0][1]+" | "+listaJugadores[0][2]+", "+listaJugadores[0][3],
                     "value": "MVPs: "+listaJugadores[0][0],
                     //inline: true
                 },
                 {
-                    "name": "🥈 "+listaJugadores[1][1]+" | "+listaJugadores[1][2],
+                    "name": "🥈 "+listaJugadores[1][1]+" | "+listaJugadores[1][2]+", "+listaJugadores[1][3],
                     "value": "MVPs: "+listaJugadores[1][0],
                     //inline: true
                 },
                 {
-                    "name": "🥉 "+listaJugadores[2][1]+" | "+listaJugadores[2][2],
+                    "name": "🥉 "+listaJugadores[2][1]+" | "+listaJugadores[2][2]+", "+listaJugadores[2][3],
                     "value": "MVPs: "+listaJugadores[2][0],
                     //inline: true
                 },
                 {
-                    "name": listaJugadores[3][1]+" | "+listaJugadores[3][2],
+                    "name": listaJugadores[3][1]+" | "+listaJugadores[3][2]+", "+listaJugadores[3][3],
                     "value": "MVPs: "+listaJugadores[3][0],
                     //inline: true
                 },
                 {
-                    "name": listaJugadores[4][1]+" | "+listaJugadores[4][2],
+                    "name": listaJugadores[4][1]+" | "+listaJugadores[4][2]+", "+listaJugadores[4][3],
                     "value": "MVPs: "+listaJugadores[4][0],
                     //inline: true
                 }
