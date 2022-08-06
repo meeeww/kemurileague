@@ -40,10 +40,10 @@ module.exports = {
         var listaJugadores = []
         for(var i = 0; i < dataGotten2["values"][0][39]; i++){
             listaJugadores.push([
-                dataGotten2["values"][i + 1][4], //mpvs general 0
+                parseInt(dataGotten2["values"][i + 1][4]), //mpvs general 0
                 dataGotten2["values"][i + 1][0], //nombre 1 /
                 dataGotten2["values"][i + 1][1], //equipo 2
-                dataGotten2["values"][i + 1][3], //mvps por rol 3
+                parseInt(dataGotten2["values"][i + 1][3]), //mvps por rol 3
                 dataGotten2["values"][i + 1][5], //division 4
                 dataGotten2["values"][i + 1][6], //grupo 5
                 dataGotten2["values"][i + 1][7], //posicion 6 /
@@ -53,7 +53,7 @@ module.exports = {
 
         for(var i = 0; i < listaJugadores.length; i++){
             // Last i elements are already in place 
-            for(var j = 0; j < ( listaJugadores.length - i -1 ); j++){
+            for(var j = 0; j < ( listaJugadores.length -1 ); j++){
                
               // Checking if the item at present iteration
               // is greater than the next iteration
