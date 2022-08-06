@@ -50,27 +50,25 @@ module.exports = {
                 listaJugadores.push([dataGotten2["values"][i + 1][3], dataGotten2["values"][i + 1][0], dataGotten2["values"][i + 1][1]])
             }
         }
-
+        
         for(var i = 0; i < listaJugadores.length; i++){
             // Last i elements are already in place 
-            for(var j = 0; j < ( listaJugadores.length - i -1 ); j++){
-               
+            for(var j = 0; j < ( listaJugadores.length - 1 ); j++){
               // Checking if the item at present iteration
               // is greater than the next iteration
               if(listaJugadores[j][0] < listaJugadores[j+1][0]){
-                 
                 // If the condition is true then swap them
                 var temp = listaJugadores[j][0]
                 listaJugadores[j][0] = listaJugadores[j + 1][0]
                 listaJugadores[j+1][0] = temp
-
+          
                 var temp2 = listaJugadores[j][1]
                 listaJugadores[j][1] = listaJugadores[j + 1][1]
                 listaJugadores[j+1][1] = temp2
               }
             }
-          // Print the sorted array
-        }
+          // Print the sorted arra
+          }
 
         
         console.log(listaJugadores);
