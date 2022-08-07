@@ -58,6 +58,7 @@ module.exports = {
                 dataGotten2["values"][i + 1][10], //web 10
                 dataGotten2["values"][i + 1][11], //logo 11
                 dataGotten2["values"][i + 1][12], //color 12
+                dataGotten2["values"][i + 1][13], //representante 13
 
             ])
         }
@@ -78,8 +79,9 @@ module.exports = {
                         "**Tag: **"+listaEquipos[i][1]+"\n"+
                         "**División: **"+listaEquipos[i][2]+"\n"+
                         "**Grupo: **"+listaEquipos[i][3]+"\n"+
+                        "**Representante: **"+listaEquipos[i][1]+"\n"+
                         "**Hashtag: **"+listaEquipos[i][4]+"\n"+
-                        "**Color: **"+listaEquipos[i][12]+"\n"
+                        "**Color: **"+listaEquipos[i][13]+"\n"
                         ,
                         //inline: true
                     }
